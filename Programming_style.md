@@ -1,4 +1,4 @@
-#react+reduxの学習のゴール
+# react+reduxの学習のゴール
 ## [react]
 ・自分でコンポーネントを実装できる
 ・stateとpropsの違いを説明できる
