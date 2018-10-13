@@ -51,23 +51,23 @@
 .
 ├── actions
 │   └── [ComponentName]
-│       ├── [ComponentName]ActionType.ts
-│       ├── [ComponentName]Action.ts
-│       └── [ComponentName]ActionCreator.ts
+│       ├── [ComponentName]ActionType.js
+│       ├── [ComponentName]Action.js
+│       └── [ComponentName]ActionCreator.js
 ├── components
 │   └── [ComponentName]
 │       ├── [ComponentName].tsx
 │       └── [ComponentName].test.tsx
 ├── containers
 │   └── [ComponentName]
-│       └── [ComponentName].ts
+│       └── [ComponentName].js
 ├── reducers
 │   └── [StateName]
-│       ├── [StateName].ts
-│       └── [StateName].test.ts
+│       ├── [StateName].js
+│       └── [StateName].test.js
 └── states
 │   └── [StateName]
-│       └── [StateName]State.ts
+│       └── [StateName]State.js
 ```
 
 ## actions
