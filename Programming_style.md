@@ -99,3 +99,6 @@
 ## redecers
 - ReducerはStateと1対1で対応しているので、State名ごとにフォルダを分ける
 - Redecerのfunctionには必ず返り値のStateの型を明記する
+
+## gitとgithubについて
+[gitとgithubについて](https://qiita.com/tekoneko1997/private/86555081dac047e8fd32)
