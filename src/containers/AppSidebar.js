@@ -15,6 +15,15 @@ class AppSidebar extends Component {
       case "/send":
         new_target = "SEND"
         break;
+      case "/request":
+        new_target = "Request"
+        break;
+      case "/setting":
+        new_target = "Setting"
+        break;
+      case "/signup":
+        new_target = "Sign up"
+        break;
       default:
     }
     this.state = {
