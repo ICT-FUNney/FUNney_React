@@ -13,7 +13,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 const style = (theme) =>({
   Drawer__paper: {
     top: "30vh",
-    width: "230px"
+    width: "230px",
+    boxShadow: "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)"
   },
   ListItemIcon__root: {
     marginRight: 0
@@ -32,7 +33,7 @@ const Sidebar = (props) =>{
     <div>
       <Drawer
         variant="persistent"
-        open = {true} elevation	= {7} ModalProps = {{BackdropProps: {open: false}}} classes = {{
+        open = {true} elevation	= {7}  classes = {{
         paper: classes.Drawer__paper,
       }} >
       <List>
