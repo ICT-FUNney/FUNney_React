@@ -30,7 +30,9 @@ const Sidebar = (props) =>{
   const { classes } = props;
   return (
     <div>
-      <Drawer open = {true} elevation	= {7} ModalProps = {{BackdropProps: {open: false}}} classes = {{
+      <Drawer
+        variant="persistent"
+        open = {true} elevation	= {7} ModalProps = {{BackdropProps: {open: false}}} classes = {{
         paper: classes.Drawer__paper,
       }} >
       <List>
