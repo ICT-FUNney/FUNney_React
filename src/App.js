@@ -1,28 +1,48 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Route, Switch} from 'react-router-dom';
+import { withRouter } from 'react-router';
+
 import './App.css';
+import AppMenubar from './containers/AppMenubar.js';
+import AppSidebar from './containers/AppSidebar.js';
+
+import Home from './containers/Home.js';
+import Send from './containers/Send.js';
+import Request from './containers/Request.js';
+import Setting from './containers/Setting.js';
+import SignUp from './containers/SignUp.js';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      link: this.props.history.location.pathname,
+    }
+  }
+  changeTask = (target) => {
+    this.setState({
+      task: target,
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <AppMenubar />
+        <AppSidebar link = {this.state.link} clickSidebar = {
+          target =>{
+            this.changeTask(target);
+          }} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/send" component={Send} />
+          <Route exact path="/request" component={Request} />
+          <Route exact path="/setting" component={Setting} />
+          <Route exact path="/signup" component={SignUp} />
+        </Switch>
       </div>
-    );
+     );
   }
 }
 
-export default App;
+export default withRouter(App);
