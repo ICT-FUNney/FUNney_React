@@ -1,11 +1,12 @@
 import React from 'react'
+import './Send.css'
 
 const Send=()=>{
 	let studentNum
 	let money
 
 	return(
-		<div>
+		<div className='box'>
 		<form
 		onSubmit={e=>{
 			e.preventDefault()
@@ -19,8 +20,12 @@ const Send=()=>{
 			money.value=''
 		}}
 		>
-		<input ref={node=>studentNum=node}/>
-		<input ref={node=>money=node}/>
+		<div>
+		<input placeholder="送り先 学籍番号" ref={node=>studentNum=node}/>
+		</div>
+		<div>
+		<input placeholder="送金金額" ref={node=>money=node}/>
+		</div>
 		<button type="submit">
 		Send
 		</button>
