@@ -1,11 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
-import logo from './logo.svg';
-import './App.css';
 
 const styles = theme => ({
 
@@ -18,10 +14,14 @@ const styles = theme => ({
 });
 
 
-class TextFields extends React.Component {
-  state = {
-    name: '',
-  };
+class UserName extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+    }
+  }
 
   handleChange = name => event => {
     this.setState({
@@ -56,9 +56,4 @@ class TextFields extends React.Component {
   }
 }
 
-
-TextFields.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(TextFields);
+export default withStyles(styles)(UserName);
