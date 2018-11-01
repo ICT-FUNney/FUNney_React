@@ -13,7 +13,7 @@ import Request from './containers/Request.js';
 import Setting from './containers/Setting.js';
 import Signout from './containers/Signout.js';
 
-import Login form './containers/Login.js';
+import Login from './containers/Login.js';
 
 class App extends Component {
   constructor(props) {

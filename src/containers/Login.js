@@ -8,7 +8,9 @@ class Login extends Component {
   render() {
     return (
       <div className="Login">
-      <img src={FUNneyLogo} className="Login_FUNneyLogo"  alt="logo" />
+      <div className="FUNneyLogo">
+      <img src={FUNneyLogo} className="Login_FUNneyLogo" alt="logo" />
+      </div>
       <div>
       <b className="Login_FUNney">FUNney</b>
       </div>

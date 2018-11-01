@@ -61,14 +61,16 @@ class LoginForm extends Component {
           />
         </div>
           <TextField
-            error
-            id="standard-error"
+            id="standard-read-only-input"
             label="Error"
-            defaultValue="パスワード再入力"
+            defaultValue="再入力してください"
             className={classes.textField}
             margin="normal"
+            InputProps={{
+              readOnly: true,
+            }}
           />
-      </div>
+        </div>
     );
   }
 }

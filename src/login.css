@@ -1,0 +1,30 @@
+.FUNneyLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15vh;
+}
+
+.Login_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+}
+
+.Login_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Login_FUNneyLogo {
+  width: 4em;
+  height: 4em;
+}
+
+.Login_FUNney {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
