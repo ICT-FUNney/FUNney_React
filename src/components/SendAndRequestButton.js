@@ -13,7 +13,9 @@ const SendAndRequestButton = (props) =>{
   const { classes } = props;
   return (
     <div>
-      <Button variant="contained" size="large" color="primary" className={classes.SendButton}>
+      <Button variant="contained" size="large" color="primary"
+      className={classes.SendButton}
+      onClick = {props.sendButton}>
         Send
       </Button>
       <Button variant="contained" size="large" color="primary" className={classes.button}>

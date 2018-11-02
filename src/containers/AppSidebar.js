@@ -51,7 +51,7 @@ class AppSidebar extends Component {
           this.props.history.push('/signup');
           break;
       default:
-         this.props.history.push('/');
+         this.props.history.push('/home');
     }
   }
   render(){

@@ -6,6 +6,7 @@ import './App.css';
 import AppMenubar from './containers/AppMenubar.js';
 import AppSidebar from './containers/AppSidebar.js';
 
+import Login from './containers/Login.js';
 import Home from './containers/Home.js';
 import Send from './containers/Send.js';
 import Request from './containers/Request.js';
@@ -26,22 +27,29 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div className="App">
-        <AppMenubar />
-        <AppSidebar link = {this.state.link} clickSidebar = {
-          target =>{
-            this.changeTask(target);
-          }} />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/send" component={Send} />
-          <Route exact path="/request" component={Request} />
-          <Route exact path="/setting" component={Setting} />
-          <Route exact path="/signup" component={SignUp} />
-        </Switch>
-      </div>
-     );
+    if(this.state.link === "/"){
+      return(
+        <div className="App"> <Login /> </div>
+      );
+    }
+    else{
+      return(
+        <div className="App">
+          <AppMenubar />
+          <AppSidebar link = {this.state.link} clickSidebar = {
+            target =>{
+              this.changeTask(target);
+            }} />
+          <Switch>
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/send" component={Send} />
+            <Route exact path="/request" component={Request} />
+            <Route exact path="/setting" component={Setting} />
+            <Route exact path="/signup" component={SignUp} />
+          </Switch>
+        </div>
+      );
+    }
   }
 }
 
