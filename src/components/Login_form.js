@@ -75,4 +75,4 @@ class LoginForm extends Component {
   }
 }
 
-export default withStyles(styles)(LoginForm);
+export default withStyles(styles)(LoginForm)

@@ -15,9 +15,25 @@ const LoginButton=(props)=> {
   const { classes } = props;
   return (
     <div>
-      <Button color="primary" className={classes.button}>ログイン</Button>
-    </div>
-  );
+  {["HOME", "Login"].map((text, index) => {
+    if(text !== props.target){
+      return (
+        <div>
+          <Button color="primary" className={classes.button} onClick = {e => {
+            props.clickTask(text)
+          }}>ログイン</Button>
+        </div>
+      )
+    } else {
+      return (
+        <div>
+        <Button color="primary" className={classes.button}>ログイン</Button>
+        </div>
+      )
+    }
+  })}
+  </div>
+  )
 }
 
-export default withStyles(styles)(LoginButton);
+export default withStyles(styles)(LoginButton)

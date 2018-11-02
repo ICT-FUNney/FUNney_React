@@ -94,6 +94,8 @@ const Sidebar = (props) =>{
       <Divider />
         <List className = {classes.SidebarList}>
           {['HOME', 'SEND','Request', 'Setting', 'Signout'].map((text, index) => {
+            if(text!==props.target){
+>>>>>>> ログインのurlからホームのurlへver.1
               return (
                 <ListItem button = {(text!==props.target) ? true : false} value = {text} key={text}
                  className = {(text!==props.target) ? classes.SidebarListItems: classes.SidebarListItemsTarget}
