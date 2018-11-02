@@ -14,7 +14,7 @@ const styles = theme => ({
 });
 
 
-class UserName extends React.Component {
+class RequestInput extends React.Component {
 
   constructor(props) {
     super(props);
@@ -56,4 +56,4 @@ class UserName extends React.Component {
   }
 }
 
-export default withStyles(styles)(UserName);
+export default withStyles(styles)(RequestInput);

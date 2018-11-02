@@ -3,23 +3,25 @@ import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
 const styles = (theme) => ({
-  TestBotan__root:{
+  RequestBotan__root:{
     marginLeft: theme.spacing.unit,
     marginRight: "50px",
     width: 200,
   }
 });
 
-const TestBotan= (props)=>{
+const RequestBotan= (props)=>{
   const { classes } = props;
   return(
-  <div className="TestBotan">
+  <div className="RequestBotan">
      <Button variant="contained" color="primary" classes={{
-       root: classes.TestBotan__root,
+       root: classes.RequestBotan__root,
      }}>
        request
      </Button>
+
+    
   </div>);
 }
 
-export default withStyles(styles)(TestBotan);
+export default withStyles(styles)(RequestBotan);

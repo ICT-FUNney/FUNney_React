@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
-import UserName from '../components/UserName.js';
-import TestBotan from '../components/TestBotan.js';
+import RequestInput from '../components/RequestInput.js';
+import RequestBotan from '../components/RequestBotan.js';
 import '../App.css'
 
 class Request extends Component {
@@ -9,11 +9,11 @@ class Request extends Component {
     return (
       <div className="Request">
       <div>
-      <div className="UserName">
-      <UserName/>
+      <div className="RequestInput">
+      <RequestInput />
       </div>
-      <div className="TestBotan">
-      <TestBotan />
+      <div className="RequestBotan">
+      <RequestBotan />
       </div>
       </div>
       </div>
