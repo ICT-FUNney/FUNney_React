@@ -23,8 +23,8 @@ class AppSidebar extends Component {
       case "/setting":
         new_target = "Setting"
         break;
-      case "/signup":
-        new_target = "Sign up"
+      case "/signout":
+        new_target = "Signout"
         break;
       default:
     }
@@ -49,8 +49,8 @@ class AppSidebar extends Component {
       case 'Setting':
           this.props.history.push('/setting');
           break;
-      case 'Sign up':
-          this.props.history.push('/signup');
+      case 'Signout':
+          this.props.history.push('/signout');
           break;
       default:
          this.props.history.push('/home');
