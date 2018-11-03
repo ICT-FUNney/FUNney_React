@@ -60,9 +60,9 @@ class Senda extends React.Component {
 					value={this.state.sendMoney}
 					margin="normal"
 				/>
-        <Button variant="contained" color="primary" className={classes.button}>
-          送金
-        </Button>
+			        <Button variant="contained" color="primary" className={classes.button}>
+				          送金
+       				 </Button>
 			</form>
 		);
 	}
