@@ -2,8 +2,8 @@ import React from 'react'
 import './Send.css'
 
 const Send=()=>{
-	let studentNum
-	let money
+	let studentNum=''
+	let money=''
 
 	return(
 		<div className='box'>
