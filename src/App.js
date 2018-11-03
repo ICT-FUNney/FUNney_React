@@ -16,31 +16,19 @@ import SignUp from './containers/SignUp.js';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      link: this.props.history.location.pathname,
-    }
   }
-  changeTask = (target) => {
-    this.setState({
-      task: target,
-    })
-  }
-
   render() {
-    if(this.state.link === "/"){
-      return(
-        <div className="App"> <Login /> </div>
-      );
-    }
-    else{
       return(
         <div className="App">
-          <AppMenubar />
-          <AppSidebar link = {this.state.link} clickSidebar = {
-            target =>{
-              this.changeTask(target);
-            }} />
+          { this.props.history.location.pathname !== '/' ?
+            <div>
+              <AppMenubar />
+              <AppSidebar />
+            </div>
+            : null
+          }
           <Switch>
+            <Route exact path="/" component={Login} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/send" component={Send} />
             <Route exact path="/request" component={Request} />
@@ -50,7 +38,6 @@ class App extends Component {
         </div>
       );
     }
-  }
 }
 
 export default withRouter(App);
