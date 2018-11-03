@@ -7,29 +7,29 @@ const Send=()=>{
 
 	return(
 		<div className='box'>
-		<form
-		onSubmit={e=>{
-			e.preventDefault()
-			if(!studentNum.value.trim()){
-				return
-			}
-			if(!money.value.trim()){
-				return
-			}
-			studentNum.value=''
-			money.value=''
-		}}
-		>
-		<div>
-		<input placeholder="送り先 学籍番号" ref={node=>studentNum=node}/>
-		</div>
-		<div>
-		<input placeholder="送金金額" ref={node=>money=node}/>
-		</div>
-		<button type="submit">
-		Send
-		</button>
-		</form>
+			<form
+				onSubmit={e=>{
+				e.preventDefault()
+				if(!studentNum.value.trim()){
+					return
+				}
+				if(!money.value.trim()){
+					return
+				}
+				studentNum.value=''
+				money.value=''
+			}}
+			>
+				<div>
+					<input placeholder="送り先 学籍番号" ref={node=>studentNum=node}/>
+				</div>
+				<div>
+					<input placeholder="送金金額" ref={node=>money=node}/>
+				</div>
+				<button type="submit">
+					Send
+				</button>
+			</form>
 		</div>
 	)
 }
