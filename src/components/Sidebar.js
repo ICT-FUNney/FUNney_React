@@ -50,7 +50,7 @@ const Sidebar = (props) =>{
       </List>
       <Divider />
         <List>
-          {['HOME', 'SEND','Request', 'Setting', 'Sign up'].map((text, index) => {
+          {['HOME', 'SEND','Request', 'Setting', 'Signout'].map((text, index) => {
             if(text!==props.target){
               return (
                 <ListItem button value = {text} key={text} onClick = {e => {

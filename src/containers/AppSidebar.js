@@ -8,10 +8,12 @@ import Sidebar from '../components/Sidebar.js';
 class AppSidebar extends Component {
   constructor(props) {
     super(props);
-    var link = this.props.link;
-    console.log(link)
-    var new_target = "HOME";
+    var link = this.props.history.location.pathname;
+    var new_target = "/";
     switch (link) {
+      case "/home":
+        new_target = "HOME"
+        break;
       case "/send":
         new_target = "SEND"
         break;
@@ -21,8 +23,8 @@ class AppSidebar extends Component {
       case "/setting":
         new_target = "Setting"
         break;
-      case "/signup":
-        new_target = "Sign up"
+      case "/signout":
+        new_target = "Signout"
         break;
       default:
     }
@@ -47,11 +49,11 @@ class AppSidebar extends Component {
       case 'Setting':
           this.props.history.push('/setting');
           break;
-      case 'Sign up':
-          this.props.history.push('/signup');
+      case 'Signout':
+          this.props.history.push('/signout');
           break;
       default:
-         this.props.history.push('/');
+         this.props.history.push('/home');
     }
   }
   render(){
@@ -60,7 +62,6 @@ class AppSidebar extends Component {
         <Sidebar target = {this.state.target} clickTask = {
           task => {
             this.changeLink(task);
-            this.props.clickSidebar(task);
           }} />
       </div>
     );
