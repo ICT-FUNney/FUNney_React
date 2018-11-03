@@ -25,7 +25,7 @@ const styles = theme => ({
   },
 });
 
-class Senda extends React.Component {
+class Send extends React.Component {
 	state = {
 		studentNum:'',
 		sendMoney: '',
@@ -68,4 +68,4 @@ class Senda extends React.Component {
 	}
 }
 
-export default withStyles(styles)(Senda);
+export default withStyles(styles)(Send);
