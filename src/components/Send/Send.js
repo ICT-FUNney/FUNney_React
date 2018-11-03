@@ -62,7 +62,7 @@ class Senda extends React.Component {
 				/>
 			        <Button variant="contained" color="primary" className={classes.button}>
 				          送金
-       				 </Button>
+       			 </Button>
 			</form>
 		);
 	}
