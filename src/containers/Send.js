@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import SendInput from '../components/SendInput';
-import SendTestButton from '../components/SendTestButton';
+import SendButton from '../components/SendButton';
 
 
 class Send extends Component {
   render() {
     return (
       <div className="Send" >
-       <div>
-         <SendInput />
-         <SendTestButton />
-         </div>
+        <div>
+        <SendInput />
+        <SendButton />
+        </div>
       </div>
     );
   }
