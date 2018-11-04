@@ -4,7 +4,10 @@ import Button from '@material-ui/core/Button';
 
 const style  = (theme) => ({
   Sendtest: {
-    marginTop:  30,
+    margintop: theme.spacing.unit,
+    margin: theme.spacing.unit,
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
     width: 200,
 }
 });
@@ -18,7 +21,7 @@ const SendButton = (props) =>{
         size="large" 
         color="primary" 
         className={classes.Sendtest}>
-          Send
+          送金
       </Button>
     </div>
   );
