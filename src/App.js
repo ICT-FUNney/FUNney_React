@@ -16,14 +16,37 @@ import Signout from './containers/Signout.js';
 class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      sidebarOpen: true,
+      link: this.props.history.location.pathname
+    }
+  }
+  static getDerivedStateFromProps(nextProps: Props, prevState: State) {
+      console.log(nextProps.history.location.pathname)
+      return {
+        sidebarOpen: prevState.sidebarOpen,
+        link: nextProps.history.location.pathname
+      };
   }
   render() {
+      console.log(this.state)
       return(
-        <div className="App">
+        <div className={(this.state.sidebarOpen && this.state.link !== "/") ? "App" : "App_NoSidebar"}>
           { this.props.history.location.pathname !== '/' ?
             <div>
-              <AppMenubar />
-              <AppSidebar />
+              <AppMenubar sidebarOpen = {() => {
+                this.setState({
+                  sidebarOpen: true,
+                })
+              }}/>
+              <AppSidebar open={this.state.sidebarOpen}
+                handleDrawerClose = {() => {
+                 this.setState({
+                    sidebarOpen: false,
+                 })
+                }}
+                link = {this.state.link}
+              />
             </div>
             : null
           }

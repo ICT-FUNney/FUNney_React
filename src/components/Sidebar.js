@@ -9,12 +9,45 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
+import IconButton from '@material-ui/core/IconButton';
+
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import SettingsIcon from '@material-ui/icons/Settings';
+import VerticalAlignBottomIcon from '@material-ui/icons/VerticalAlignBottom';
+import HomeIcon from '@material-ui/icons/Home';
+import SendIcon from '@material-ui/icons/Send';
+import UnarchiveIcon from '@material-ui/icons/Unarchive';
+
 
 const style = (theme) =>({
   Drawer__paper: {
-    top: "30vh",
     width: "230px",
-    boxShadow: "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)"
+  },
+  SidebarList: {
+    marginTop: "30px",
+  },
+  SidebarListItems: {
+    width: "90%",
+    marginLeft: "10%",
+    marginBottom: "15px",
+    '&:last-child': {
+      marginTop: "30vh",
+    },
+  },
+  SidebarListItemsTarget: {
+    width: "90%",
+    marginLeft: "10%",
+    marginBottom: "15px",
+    '&:last-child': {
+      marginTop: "30vh",
+    },
+    background: '#FF8C00',
+    boxShadow: "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)"
+  },
+
+  SidebarListItemsTexts__primary: {
+    lineHeight: "2em",
   },
   ListItemIcon__root: {
     marginRight: 0
@@ -24,16 +57,23 @@ const style = (theme) =>({
   },
   ListItem__root: {
     background: '#FF8C00',
+    boxShadow: "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)"
   },
+  ButtonCloseSidebar: {
+    marginLeft: "90px"
+  }
 });
 
 const Sidebar = (props) =>{
   const { classes } = props;
+  const icons = [<HomeIcon />, <SendIcon />, <VerticalAlignBottomIcon /> ,
+    <SettingsIcon />, <UnarchiveIcon />,
+  ];
   return (
     <div>
       <Drawer
         variant="persistent"
-        open = {true} elevation	= {7}  classes = {{
+        open = {props.open} elevation	= {7}  classes = {{
         paper: classes.Drawer__paper,
       }} >
       <List>
@@ -46,30 +86,31 @@ const Sidebar = (props) =>{
           <ListItemText primary="FUNney" classes = {{
             primary: classes.ListItemText__primary
           }} />
+          <IconButton onClick={props.handleDrawerClose} className = {classes.ButtonCloseSidebar}>
+              <ChevronLeftIcon />
+          </IconButton>
         </ListItem>
       </List>
       <Divider />
-        <List>
+        <List className = {classes.SidebarList}>
           {['HOME', 'SEND','Request', 'Setting', 'Signout'].map((text, index) => {
-            if(text!==props.target){
               return (
-                <ListItem button value = {text} key={text} onClick = {e => {
+                <ListItem button = {(text!==props.target) ? true : false} value = {text} key={text}
+                 className = {(text!==props.target) ? classes.SidebarListItems: classes.SidebarListItemsTarget}
+                 onClick = {e => {
                   props.clickTask(text)
                 }}>
-                  <ListItemText primary={text} />
+                  <ListItemIcon>
+                    {icons[index]}
+                  </ListItemIcon>
+                  <ListItemText classes = {{
+                    primary: classes.SidebarListItemsTexts__primary
+                   }}
+                    primary={text} />
                 </ListItem>
               )
             }
-            else {
-              return (
-                <ListItem key={text} classes = {{
-                  root: classes.ListItem__root,
-                }}>
-                  <ListItemText primary={text} />
-                </ListItem>
-              )
-            }
-          })}
+          )}
        </List>
      </Drawer>
     </div>

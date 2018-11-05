@@ -1,13 +1,22 @@
 .App{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15vh;
+  padding-left: calc(5vw + 230px);
+  padding-right: 5vw;
+}
+.App_NoSidebar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15vh;
 }
 
 .Home{
-  width: calc((90vw - 230px));
+  width: calc((100vw - 230px - 10vw));
   height: 70vh;
   border: solid 1px black;
-  margin-top: 15vh;
-  margin-left: calc(230px + 2vw);
-  margin-right: 8vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,9 +26,6 @@
   width: calc((90vw - 230px));
   height: 70vh;
   border: solid 1px black;
-  margin-top: 15vh;
-  margin-left: calc(230px + 2vw);
-  margin-right: 8vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,9 +35,6 @@
   width: calc((90vw - 230px));
   height: 70vh;
   border: solid 1px black;
-  margin-top: 15vh;
-  margin-left: calc(230px + 2vw);
-  margin-right: 8vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,9 +44,6 @@
   width: calc((90vw - 230px));
   height: 70vh;
   border: solid 1px black;
-  margin-top: 15vh;
-  margin-left: calc(230px + 2vw);
-  margin-right: 8vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,9 +53,6 @@
   width: calc((90vw - 230px));
   height: 70vh;
   border: solid 1px black;
-  margin-top: 15vh;
-  margin-left: calc(230px + 2vw);
-  margin-right: 8vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,18 +65,4 @@
 .Sidebar__FUNneyLogo{
   width: 2em;
   height: 2em;
-}
-
-
-
-
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

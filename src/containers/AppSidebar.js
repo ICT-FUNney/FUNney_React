@@ -8,37 +8,23 @@ import Sidebar from '../components/Sidebar.js';
 class AppSidebar extends Component {
   constructor(props) {
     super(props);
-    var link = this.props.history.location.pathname;
-    var new_target = "/";
+  }
+  makeTarget(link){
     switch (link) {
       case "/home":
-        new_target = "HOME"
-        break;
+        return "HOME"
       case "/send":
-        new_target = "SEND"
-        break;
+        return "SEND"
       case "/request":
-        new_target = "Request"
-        break;
+        return "Request"
       case "/setting":
-        new_target = "Setting"
-        break;
+        return "Setting"
       case "/signout":
-        new_target = "Signout"
-        break;
+        return "Signout"
       default:
     }
-    this.state = {
-      target: new_target,
-    }
-  }
-  changeTarget(task){
-    this.setState({
-      target: task,
-    })
   }
   changeLink(task){
-    this.changeTarget(task);
     switch (task) {
       case 'SEND':
          this.props.history.push('/send');
@@ -59,10 +45,12 @@ class AppSidebar extends Component {
   render(){
     return (
       <div className="">
-        <Sidebar target = {this.state.target} clickTask = {
+        <Sidebar open = {this.props.open} target = {this.makeTarget(this.props.link)} clickTask = {
           task => {
             this.changeLink(task);
-          }} />
+          }}
+          handleDrawerClose = {this.props.handleDrawerClose}
+        />
       </div>
     );
   }

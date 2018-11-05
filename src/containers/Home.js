@@ -10,11 +10,16 @@ class Home extends Component {
     console.log(this.props.test)
     return (
       <div className="Home">
-        <SendAndRequestButton sendButton = {
+        <SendAndRequestButton
+        sendButton = {
           ()=>{
             this.props.addTest()
-          }
-        }/>
+          }}
+        clickButton ={
+          ()=>{
+            this.props.history.push('/signout');
+          }}
+        />
       </div>
     );
   }
