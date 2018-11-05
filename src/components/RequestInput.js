@@ -20,6 +20,7 @@ class RequestInput extends React.Component {
     super(props);
     this.state = {
       name: '',
+      errorFlag: true,
     }
   }
 
@@ -36,6 +37,8 @@ class RequestInput extends React.Component {
 　　　　 <div>
         <TextField
          id="standard-uncontrolled"
+         helperText ={(this.state.errorFlag)? "error": ""}
+         error={this.state.errorFlag}
          label="要求金額"
          defaultValue=""
          className={classes.textField}
