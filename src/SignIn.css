@@ -5,25 +5,25 @@
   margin-top: 15vh;
 }
 
-.Login_form {
+.SignInForm {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 40vh;
 }
 
-.Login_button {
+.SignInButton {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.Login_FUNneyLogo {
+.SignInFUNneyLogo {
   width: 4em;
   height: 4em;
 }
 
-.Login_FUNney {
+.SignInFUNney {
   display: flex;
   justify-content: center;
   align-items: center;

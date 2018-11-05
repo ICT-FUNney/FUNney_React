@@ -22,7 +22,7 @@ const styles = theme => ({
   },
 });
 
-class LoginForm extends Component {
+class SignInForm extends Component {
   state = {
     name: '',
     age: '',
@@ -75,4 +75,4 @@ class LoginForm extends Component {
   }
 }
 
-export default withStyles(styles)(LoginForm)
+export default withStyles(styles)(SignInForm)
