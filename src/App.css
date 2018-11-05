@@ -1,58 +1,59 @@
 .App{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 15vh;
-  padding-left: calc(5vw + 230px);
-  padding-right: 5vw;
+  padding-left: 230px;
 }
 .App_NoSidebar{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 15vh;
 }
 
 .Home{
-  width: calc((100vw - 230px - 10vw));
+  width: 80%;
   height: 70vh;
   border: solid 1px black;
+  margin-top: 15vh;
+  margin-left: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .Send{
-  width: calc((90vw - 230px));
+  width: 80%;
   height: 70vh;
   border: solid 1px black;
+  margin-top: 15vh;
+  margin-left: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .Request{
-  width: calc((90vw - 230px));
+  width: 80%;
   height: 70vh;
   border: solid 1px black;
+  margin-top: 15vh;
+  margin-left: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .Setting{
-  width: calc((90vw - 230px));
+  width: 80%;
   height: 70vh;
   border: solid 1px black;
+  margin-top: 15vh;
+  margin-left: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .Signout{
-  width: calc((90vw - 230px));
+  width: 80%;
   height: 70vh;
   border: solid 1px black;
+  margin-top: 15vh;
+  margin-left: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
