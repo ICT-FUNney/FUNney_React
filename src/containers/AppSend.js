@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
 import Send from '../components/Send.js';
 
 
@@ -19,6 +16,28 @@ class AppSend extends Component {
     });
   };
 
+	sendSubmit=e=>{
+		e.preventDefault()
+		if(!this.state.sendMoney.trim()){
+			this.setState({
+				errorFlag:true,
+			})
+			return
+		}
+		if(!this.state.studentNum.trim()){
+			this.setState({
+				errorFlag:true,
+			})
+			return
+		}
+		this.setState({
+			sendMoney: '',
+			studentNum: '',
+			errorFlag: false,
+		});
+		this.props.history.push('/home');
+	};
+
 	render(){
 
 		return (
@@ -26,27 +45,7 @@ class AppSend extends Component {
         <form
           noValidate
           autoComplete="off"
-          onSubmit={e=>{
-            e.preventDefault()
-            if(!this.state.sendMoney.trim()){
-              this.setState({
-                errorFlag:true,
-              })
-              return
-            }
-            if(!this.state.studentNum.trim()){
-              this.setState({
-                errorFlag:true,
-              })
-              return
-            }
-            this.setState({
-              sendMoney: '',
-              studentNum: '',
-              errorFlag: false,
-            });
-            this.props.history.push('/home');
-          }}
+					onSubmit={e=>{this.sendSubmit(e)}}
         >
           <Send
             errorText='error'
