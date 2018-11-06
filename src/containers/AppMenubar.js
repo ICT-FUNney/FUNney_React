@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import Menubar from '../components/Menubar.js';
 
 class AppMenubar extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <div className="">
-        <Menubar />
+        <Menubar sidebarOpen = {this.props.sidebarOpen}/>
       </div>
     );
   }

@@ -18,7 +18,9 @@ const SendAndRequestButton = (props) =>{
       onClick = {props.sendButton}>
         Send
       </Button>
-      <Button variant="contained" size="large" color="primary" className={classes.button}>
+      <Button variant="contained" size="large" color="primary"
+      className={classes.button}
+      onClick = {props.clickButton}>
         Request
       </Button>
    </div>
