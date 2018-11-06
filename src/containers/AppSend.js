@@ -39,18 +39,21 @@ class AppSend extends Component {
 	render(){
 
 		return (
-      <div className='Send'>
-          <Send
-						sendSubmit={e=>{this.sendSubmit(e)}}
-            errorText='error'
-            errorFlag={this.state.errorFlag}
-            handleChange={(e)=>{this.handleChange(e,e.target.name)}}
-            sendMoney={this.state.sendMoney}
-            studentNum={this.state.studentNum}
-          />
+			<div className='Send'>
+				<Send
+					sendSubmit={e=>{this.sendSubmit(e)}}
+          errorText='error'
+          errorFlag={this.state.errorFlag}
+          handleChange={(e)=>{this.handleChange(e,e.target.name)}}
+          sendMoney={this.state.sendMoney}
+          studentNum={this.state.studentNum}
+        />
       </div>
 		);
 	}
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> インデントの修正
 export default AppSend;
