@@ -14,48 +14,38 @@ const styles = theme => ({
 });
 
 
-class RequestInput extends React.Component {
+const RequestInput = (props) => {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: '',
-      errorFlag: true,
-    }
-  }
-
-  handleChange = name => event => {
-    this.setState({
-      [name]: event.target.value,
-    });
-  };
-
-  render() {
-    const { classes } = this.props;
+    const { classes } = props;
     return (
       <form className={classes.container} noValidate autoComplete="off">
 　　　　 <div>
         <TextField
          id="standard-uncontrolled"
-         helperText ={(this.state.errorFlag)? "error": ""}
-         error={this.state.errorFlag}
+         helperText ={(props.errorFlagName)? "error": ""}
+         error={props.errorFlagName}
          label="要求金額"
          defaultValue=""
          className={classes.textField}
+         onChange={e=>{props.handleChange(e)}}
          margin="normal"
+         name="name"
         />
       </div>
         <TextField
           id="standard-name"
+          helperText ={(props.errorFlagDefaultValue)? "error": ""}
+          error={props.errorFlagDefaultValue}
           label="送り先学籍番号"
           className={classes.textField}
-          value={this.state.name}
-          onChange={this.handleChange('name')}
+          value={props.name}
+          onChange={e=>{props.handleChange(e)}}
           margin="normal"
+          name="defaultValue"
         />
       </form>
     );
   }
-}
+
 
 export default withStyles(styles)(RequestInput);

@@ -17,8 +17,8 @@ const RequestBotan= (props)=>{
      <Button variant="contained" color="primary" classes={{
        root: classes.RequestBotan__root,
      }}
-     onClick = {
-       props.clickSendRequest 
+     onClick = {e =>{props.clickSendRequest()}
+
      }
      >
        request

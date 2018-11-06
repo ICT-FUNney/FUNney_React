@@ -7,20 +7,47 @@ import '../App.css'
 class Request extends Component {
   constructor(props) {
     super(props);
-  }
-  clickSendRequest(){
-  this.props.history.push('/home');
+    this.state= {
+      name: "",
+      errorFlagName: false,
+      erroFlagDefaultValue:false,
+      defaultValue:"",
+    }
   }
 
+  clickSendRequest(){
+  if(this.state.name === "" ){
+    this.setState({
+    errorFlagName: true,
+    })
+  }else if(this.state.defaultValue === ""){
+    this.setState({
+    errorFlagDefaultValue: true,
+    })
+  }else{
+    this.props.history.push('/home');
+  }
+}
+
+handleChange = (e, name) => {
+  this.setState({
+    [name]: e.target.value,
+  });
+};
+
   render() {
+    console.log(this.state)
     return (
       <div className="Request">
        <div>
         <div className="RequestInput">
-        <RequestInput />
+        <RequestInput handleChange = {(e)=>{this.handleChange(e,e.target.name)}}
+         errorFlagName={this.state.errorFlagName}
+         errorFlagDefaultValue={this.state.errorFlagDefaultValue}
+        />
        </div>
        <div className="RequestBotan">
-        <RequestBotan clickSendRequest = {(e)=>{this.clickSendRequest()}
+        <RequestBotan clickSendRequest = {()=>{this.clickSendRequest()}
       }/>
        </div>
       </div>
