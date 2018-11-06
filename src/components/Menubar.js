@@ -27,7 +27,7 @@ const Menubar = (props) =>{
             onClick={props.sidebarOpen} >
             <MenuIcon />
           </IconButton>
-          <img src={FUNneyLogo} className="Sidebar__FUNneyLogo"  alt="logo" />
+          <img src={FUNneyLogo} className="Sidebar__FUNneyLogo__header"  alt="logo" />
           <Typography variant="h5" color="inherit">
             FUNney
           </Typography>
