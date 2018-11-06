@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Send from '../components/Send.js';
 
-
-
 class AppSend extends Component {
 	state = {
 		studentNum:'',
@@ -42,19 +40,14 @@ class AppSend extends Component {
 
 		return (
       <div className='Send'>
-        <form
-          noValidate
-          autoComplete="off"
-					onSubmit={e=>{this.sendSubmit(e)}}
-        >
           <Send
+						sendSubmit={e=>{this.sendSubmit(e)}}
             errorText='error'
             errorFlag={this.state.errorFlag}
             handleChange={(e)=>{this.handleChange(e,e.target.name)}}
             sendMoney={this.state.sendMoney}
             studentNum={this.state.studentNum}
           />
-        </form>
       </div>
 		);
 	}
