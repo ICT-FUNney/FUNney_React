@@ -8,7 +8,7 @@ import AppSidebar from './containers/AppSidebar.js';
 
 import SignIn from './containers/SignIn.js';
 import Home from './containers/Home.js';
-import Send from './containers/Send.js';
+import AppSend from './containers/AppSend.js';
 import Request from './containers/Request.js';
 import Setting from './containers/Setting.js';
 import Signout from './containers/Signout.js';
@@ -53,7 +53,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={SignIn} />
             <Route exact path="/home" component={Home} />
-            <Route exact path="/send" component={Send} />
+            <Route exact path="/send" component={AppSend} />
             <Route exact path="/request" component={Request} />
             <Route exact path="/setting" component={Setting} />
             <Route exact path="/signout" component={Signout} />
