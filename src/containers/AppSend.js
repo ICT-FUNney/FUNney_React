@@ -52,8 +52,5 @@ class AppSend extends Component {
 		);
 	}
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> インデントの修正
 export default AppSend;
