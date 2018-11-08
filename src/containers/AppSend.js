@@ -6,6 +6,7 @@ class AppSend extends Component {
 		studentNum:'',
 		sendMoney: '',
     errorFlag: false,
+		submitModal: false,
   };
 
 	handleChange =e=> {
@@ -17,6 +18,12 @@ class AppSend extends Component {
       [e.target.name]: e.target.value,
     });
   };
+
+	closeModal=()=>{
+		this.setState({
+			submitModal: false,
+		});
+	};
 
 	sendSubmit =e=> {
 		e.preventDefault()
@@ -33,9 +40,16 @@ class AppSend extends Component {
 			return
 		}
 		this.setState({
+			errorFlag: false,
+			submitModal: true,
+		});
+	};
+
+	sendDetermine=()=>{
+		this.setState({
 			sendMoney: '',
 			studentNum: '',
-			errorFlag: false,
+			submitModal: false,
 		});
 		this.props.history.push('/home');
 	};
@@ -50,6 +64,9 @@ class AppSend extends Component {
           handleChange={e=>{this.handleChange(e)}}
           sendMoney={this.state.sendMoney}
           studentNum={this.state.studentNum}
+					submitModal={this.state.submitModal}
+					closeModal={this.closeModal}
+					sendDetermine={this.sendDetermine}
         />
       </div>
 		);
