@@ -33,15 +33,13 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing.unit * 4,
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%,-50%)',
   },
 });
 const Send = (props) =>{
   const { classes } = props;
-  const modalStyle={
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%,-50%)',
-  };
   return (
     <div>
       <form
@@ -57,7 +55,7 @@ const Send = (props) =>{
             error={props.errorMoney}
             label="送金金額"
             className={classes.textField}
-            onChange={e=>{props.handleChange(e,e.target.name)}}
+            onChange={e=>{props.handleChange(e)}}
             value={props.sendMoney}
             margin="normal"
           />
@@ -70,7 +68,7 @@ const Send = (props) =>{
             error={props.errorNum}
             label="送り先 学籍番号"
             className={classes.textField}
-            onChange={e=>{props.handleChange(e,e.target.name)}}
+            onChange={e=>{props.handleChange(e)}}
             value={props.studentNum}
             margin="normal"
           />
@@ -78,6 +76,7 @@ const Send = (props) =>{
         <div>
           <Button
             variant="contained"
+            color="primary"
             className={classes.submitButton}
             type="submit"
           >
@@ -91,10 +90,7 @@ const Send = (props) =>{
         open={props.submitModal}
         onClose={props.closeModal}
       >
-        <div
-          style={modalStyle}
-          className={classes.paper}
-        >
+        <div className={classes.paper}>
           <Typography variant="h6" id="modal-title">
             確認
           </Typography>

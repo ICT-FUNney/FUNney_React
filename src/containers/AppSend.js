@@ -14,45 +14,33 @@ class AppSend extends Component {
 		if(!number.test(e.target.value)){
 			return
 		}
-
     this.setState({
       [e.target.name]: e.target.value,
     });
 	};
 
-			closeModal=()=>{
-				this.setState({
-					submitModal: false,
-				});
-			};
-
+	closeModal=()=>{
+		this.setState({
+			submitModal: false,
+		});
+	};
 
 	sendSubmit=e=>{
 		e.preventDefault()
-		if(!this.state.sendMoney.trim()&&!this.state.studentNum.trim()){
+		if(!this.state.sendMoney.trim()||!this.state.studentNum.trim()){
 			this.setState({
-				errorMoney: true,
-				errorNum: true,
-			})
-			return
-		}if(this.state.sendMoney.trim()&&!this.state.studentNum.trim()){
-			this.setState({
-				errorMoney: false,
-				errorNum: true,
-			})
-			return
-		}if(!this.state.sendMoney.trim()&&this.state.studentNum.trim()){
-			this.setState({
-				errorMoney: true,
-				errorNum: false,
+				errorMoney: (!this.state.sendMoney.trim())? true: false,
+				errorNum: (!this.state.studentNum.trim())? true: false,
 			})
 			return
 		}
 		this.setState({
-			errorFlag: false,
 			submitModal: true,
+			errorMoney: false,
+			errorNum: false,
 		});
 	};
+
 	sendDetermine=()=>{
 		this.setState({
 			sendMoney: '',
@@ -67,14 +55,14 @@ class AppSend extends Component {
 			<div className='Send'>
 				<Send
 					sendSubmit={(e)=>{this.sendSubmit(e)}}
-					errorNumText='学籍番号を入力してください'
-					errorMoneyText='送金金額を入力してください'
+					errorNumText={this.state.errorNum?'学籍番号を入力してください':''}
+					errorMoneyText={this.state.errorMoney?'送金金額を入力してください':''}
 					errorMoney={this.state.errorMoney}
 					errorNum={this.state.errorNum}
 					submitModal={this.state.submitModal}
 					closeModal={this.closeModal}
 					sendDetermine={this.sendDetermine}
-          handleChange={(e)=>{this.handleChange(e,e.target.name)}}
+          handleChange={(e)=>{this.handleChange(e)}}
           sendMoney={this.state.sendMoney}
           studentNum={this.state.studentNum}
         />
