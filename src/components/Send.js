@@ -41,7 +41,7 @@ const Send = (props) =>{
             error={props.errorFlag}
             label="送金金額"
             className={classes.textField}
-            onChange={e=>{props.handleChange(e,e.target.name)}}
+            onChange={e=>{props.handleChange(e)}}
             value={props.sendMoney}
             margin="normal"
           />
@@ -54,7 +54,7 @@ const Send = (props) =>{
             error={props.errorFlag}
             label="送り先 学籍番号"
             className={classes.textField}
-            onChange={e=>{props.handleChange(e,e.target.name)}}
+            onChange={e=>{props.handleChange(e)}}
             value={props.studentNum}
             margin="normal"
           />

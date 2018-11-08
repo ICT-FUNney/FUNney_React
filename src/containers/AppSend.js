@@ -8,13 +8,17 @@ class AppSend extends Component {
     errorFlag: false,
   };
 
-	handleChange =(event,name) => {
+	handleChange =e=> {
+		let number=new RegExp(/^\d*$/);
+		if(!number.test(e.target.value)){
+			return
+		}
     this.setState({
-      [name]: event.target.value,
+      [e.target.name]: e.target.value,
     });
   };
 
-	sendSubmit=e=>{
+	sendSubmit =e=> {
 		e.preventDefault()
 		if(!this.state.sendMoney.trim()){
 			this.setState({
@@ -37,14 +41,13 @@ class AppSend extends Component {
 	};
 
 	render(){
-
 		return (
 			<div className='Send'>
 				<Send
 					sendSubmit={e=>{this.sendSubmit(e)}}
           errorText='error'
           errorFlag={this.state.errorFlag}
-          handleChange={(e)=>{this.handleChange(e,e.target.name)}}
+          handleChange={e=>{this.handleChange(e)}}
           sendMoney={this.state.sendMoney}
           studentNum={this.state.studentNum}
         />
