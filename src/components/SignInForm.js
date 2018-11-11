@@ -60,17 +60,7 @@ class SignInForm extends Component {
             margin="normal"
           />
         </div>
-          <TextField
-            id="standard-read-only-input"
-            label="Error"
-            defaultValue="再入力してください"
-            className={classes.textField}
-            margin="normal"
-            InputProps={{
-              readOnly: true,
-            }}
-          />
-        </div>
+      </div>
     );
   }
 }
