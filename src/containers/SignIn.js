@@ -9,31 +9,9 @@ import AppMenubar from './AppMenubar.js';
 class SignIn extends Component {
   constructor(props) {
     super(props);
-    var link = this.props.history.location.pathname;
-    var new_target = "/";
-    switch(link) {
-      case "/home":
-        new_target = "HOME"
-        break;
-      default:
-    }
-    this.state = {
-      target: new_target,
-    }
   }
-  changeTarget(task) {
-    this.setState({
-      target: task,
-    })
-  }
-  changeLink(task) {
-    this.changeTarget(task);
-    switch(task) {
-      case "HOME":
-        this.props.history.push('/home');
-        break;
-      default:
-    }
+  changeLink() {
+    this.props.history.push('/home');
   }
   render() {
     return (
@@ -49,9 +27,9 @@ class SignIn extends Component {
           <SignInForm />
         </div>
         <div className="SignInButton">
-          <SignInButton target = {this.state.target} clickTask = {
-            task => {
-              this.changeLink(task);
+          <SignInButton clickTask = {
+            () => {
+              this.changeLink();
             }}/>
         </div>
       </div>

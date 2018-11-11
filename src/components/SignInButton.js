@@ -16,8 +16,8 @@ const SignInButton=(props)=> {
   return (
     <Button color="primary" className={classes.button} onClick = {
       e => {
-        props.clickTask("HOME")
-      }}>ログイン
+        props.clickTask()
+      }}>サインイン
     </Button>
   )
 }
