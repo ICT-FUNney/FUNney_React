@@ -8,12 +8,10 @@ class AppSend extends Component {
 		errorMoney: false,
 		errorNum: false,
 		submitModal: false,
+		isSpaceNum: false,
+		isSpaceMoney: false,
 	};
 	handleChange =e=> {
-		let number=new RegExp(/^\d*$/);
-		if(!number.test(e.target.value)){
-			return
-		}
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -27,10 +25,17 @@ class AppSend extends Component {
 
 	sendSubmit=e=>{
 		e.preventDefault()
-		if(!this.state.sendMoney.trim()||!this.state.studentNum.trim()){
+		let isNumber=new RegExp(/^\d\d*$/);
+		let trimMoney=this.state.sendMoney.trim();
+		let trimNum=this.state.studentNum.trim();
+		let sendMoneyValue=isNumber.test(trimMoney);
+		let studentNumValue=isNumber.test(trimNum);
+		if(!studentNumValue||!sendMoneyValue){
 			this.setState({
-				errorMoney: (!this.state.sendMoney.trim())? true: false,
-				errorNum: (!this.state.studentNum.trim())? true: false,
+				errorMoney: (!sendMoneyValue)? true: false,
+				errorNum: (!studentNumValue)? true: false,
+				isSpaceMoney: (!trimMoney)? true:false,
+				isSpaceNum: (!trimNum)? true:false,
 			})
 			return
 		}
@@ -38,6 +43,8 @@ class AppSend extends Component {
 			submitModal: true,
 			errorMoney: false,
 			errorNum: false,
+			isSpaceMoney: false,
+			isSpaceNum: false,
 		});
 	};
 
@@ -47,16 +54,20 @@ class AppSend extends Component {
 			studentNum: '',
 			errorMoney: false,
 			errorNum: false,
+			isSpaceMoney: false,
+			isSpaceNum: false,
 			submitModal: false,
 		});
 	};
 	render(){
+		let errorNumMes='半角数字のみ入力してください';
+		let errorSpaceMes="入力されていません";
 		return (
 			<div className='Send'>
 				<Send
 					sendSubmit={(e)=>{this.sendSubmit(e)}}
-					errorNumText={this.state.errorNum?'学籍番号を入力してください':''}
-					errorMoneyText={this.state.errorMoney?'送金金額を入力してください':''}
+					errorNumText={this.state.errorNum?(this.state.isSpaceNum? errorSpaceMes:errorNumMes):''}
+					errorMoneyText={this.state.errorMoney?(this.state.isSpaceMoney? errorSpaceMes:errorNumMes):''}
 					errorMoney={this.state.errorMoney}
 					errorNum={this.state.errorNum}
 					submitModal={this.state.submitModal}
