@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 15vh;
+  margin-top: 5vh;
 }
 
 .SignInForm {
@@ -19,14 +19,21 @@
 }
 
 .SignInFUNneyLogo {
-  width: 4em;
-  height: 4em;
+  width: 8em;
+  height: 8em;
 }
 
 .SignInFUNney {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 5vh;
+  font-size: 150%
+}
+
+a {
+text-decoration: none;
+font-size: 90%;
 }
 
 .SignInHref {
