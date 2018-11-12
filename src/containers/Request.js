@@ -33,7 +33,11 @@ clickSendRequest(){
       this.state.requestSelect !== "noselect" && checkNumber.test(this.state.name)
     && checkNumber.test(this.state.defaultValue)){
       this.props.history.push('/request');
-
+      this.setState({
+        name: "",
+        defaultValue:"",
+        requestSelect:"noselect",
+      })
       }
     }
 
