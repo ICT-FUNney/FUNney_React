@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
-//import classNames from 'classnames';
+import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-//import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 
 const styles = theme => ({
@@ -22,47 +20,49 @@ const styles = theme => ({
   },
 });
 
-class SignInForm extends Component {
-  state = {
-    name: '',
-    age: '',
-    multiline: 'Controlled',
-    currency: 'EUR',
-  };
-
-  handleChange = name => event => {
-    this.setState({
-      [name]: event.target.value,
-    });
-  };
-
-  render() {
-    const { classes } = this.props;
-
-    return (
+const SignInForm=(props)=>{
+  const { classes } = props;
+  console.log(props.sIdFlag);
+  return (
+    <div>
       <div>
-        <div>
-          <TextField
-            id="standard-name"
-            label="学籍番号"
-            className={classes.textField}
-            onChange={this.handleChange('name')}
-            margin="normal"
-          />
-        </div>
-        <div>
-          <TextField
-            id="standard-password-input"
-            label="パスワード"
-            className={classes.textField}
-            type="password"
-            autoComplete="current-password"
-            margin="normal"
-          />
-        </div>
+        <TextField
+          id="studentId"
+          label="学籍番号"
+          className={classes.textField}
+          onChange={
+            e => {
+              props.changeForm(e)
+            }
+          }
+          margin="normal"
+          value={props.sId}
+          errorFlag="studentId_flag"
+          error={props.checkError}
+          helperText={(props.sIdFlags||props.checkError) ? "数字のみ入力可能です" : (props.sIdFlag&&props.checkError) ? "学籍番号を入力してください" : ""}
+        />
       </div>
-    );
-  }
+      <div>
+        <TextField
+          id="password"
+          label="パスワード"
+          className={classes.textField}
+          onChange={
+            e => {
+              props.changeForm(e)
+            }
+          }
+          type="password"
+          autoComplete="current-password"
+          margin="normal"
+          value={props.pass}
+          errorFlag="password_flag"
+          error={props.passFlag&&props.checkError}
+          helperText={(props.passFlags&&props.checkError) ? "英数字のみ入力可能です" : (props.passFlag&&props.checkError) ? "パスワードを入力してください" : ""}
+        />
+      </div>
+    </div>
+  );
 }
 
 export default withStyles(styles)(SignInForm)

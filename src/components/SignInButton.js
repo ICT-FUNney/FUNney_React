@@ -11,13 +11,18 @@ const styles = theme => ({
   },
 });
 
-const SignInButton=(props)=> {
+const SignInButton=(props)=>{
   const { classes } = props;
   return (
-    <Button color="primary" className={classes.button} onClick = {
-      e => {
-        props.clickTask()
-      }}>サインイン
+    <Button
+      color="primary"
+      className={classes.button}
+      onClick = {
+        e => {
+          props.clickTask()
+        }
+      }
+    >サインイン
     </Button>
   )
 }
