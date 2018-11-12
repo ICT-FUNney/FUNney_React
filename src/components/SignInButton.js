@@ -16,6 +16,7 @@ const SignInButton=(props)=>{
   return (
     <Button
       color="primary"
+      variant="contained"
       className={classes.button}
       onClick = {
         e => {

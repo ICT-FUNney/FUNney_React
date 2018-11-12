@@ -61,6 +61,9 @@ const SignInForm=(props)=>{
           helperText={(props.passFlag&&props.checkError) ? "入力されていません" : (props.passFlags&&props.checkError) ? "英数字のみ入力してください" : ""}
         />
       </div>
+      <a href="/signout">
+      初めての方はこちら
+      </a>
     </div>
   );
 }
