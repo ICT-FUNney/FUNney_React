@@ -47,8 +47,8 @@ class AppSend extends Component {
 			studentNum: '',
 			errorMoney: false,
 			errorNum: false,
+			submitModal: false,
 		});
-		this.props.history.push('/home');
 	};
 	render(){
 		return (
