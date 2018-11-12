@@ -23,6 +23,7 @@ import UnarchiveIcon from '@material-ui/icons/Unarchive';
 const style = (theme) =>({
   Drawer__paper: {
     width: "230px",
+    overflowY: "visible"
   },
   SidebarList: {
     marginTop: "30px",
@@ -37,7 +38,8 @@ const style = (theme) =>({
   },
   SidebarListItemsTarget: {
     width: "90%",
-    marginLeft: "10%",
+    color: "white",
+    marginLeft: "15%",
     marginBottom: "15px",
     '&:last-child': {
       marginTop: "30vh",
@@ -47,6 +49,10 @@ const style = (theme) =>({
   },
 
   SidebarListItemsTexts__primary: {
+    lineHeight: "2em",
+  },
+  SidebarListItemsTexts__target: {
+    color: "white",
     lineHeight: "2em",
   },
   ListItemIcon__root: {
@@ -61,6 +67,9 @@ const style = (theme) =>({
   },
   ButtonCloseSidebar: {
     marginLeft: "90px"
+  },
+  TargetIcon: {
+    color: "white",
   }
 });
 
@@ -100,11 +109,11 @@ const Sidebar = (props) =>{
                  onClick = {e => {
                   props.clickTask(text)
                 }}>
-                  <ListItemIcon>
+                  <ListItemIcon className = {(text!==props.target) ? "": classes.TargetIcon}>
                     {icons[index]}
                   </ListItemIcon>
                   <ListItemText classes = {{
-                    primary: classes.SidebarListItemsTexts__primary
+                    primary: (text!==props.target) ? classes.SidebarListItemsTexts__primary : classes.SidebarListItemsTexts__target
                    }}
                     primary={text} />
                 </ListItem>
