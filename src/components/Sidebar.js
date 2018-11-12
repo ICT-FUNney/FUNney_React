@@ -39,7 +39,7 @@ const style = (theme) =>({
   SidebarListItemsTarget: {
     width: "90%",
     color: "white",
-    marginLeft: "15%",
+    marginLeft: "12%",
     marginBottom: "15px",
     '&:last-child': {
       marginTop: "30vh",
