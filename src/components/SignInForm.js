@@ -38,8 +38,8 @@ const SignInForm=(props)=>{
           margin="normal"
           value={props.sId}
           errorFlag="studentId_flag"
-          error={props.checkError}
-          helperText={(props.sIdFlags||props.checkError) ? "数字のみ入力可能です" : (props.sIdFlag&&props.checkError) ? "学籍番号を入力してください" : ""}
+          error={props.checkError&&((props.sIdFlag)||(props.sIdFlags))}
+          helperText={(props.sIdFlag&&props.checkError) ? "入力されていません" : (props.sIdFlags&&props.checkError) ? "数字のみ入力してください" : ""}
         />
       </div>
       <div>
@@ -57,8 +57,8 @@ const SignInForm=(props)=>{
           margin="normal"
           value={props.pass}
           errorFlag="password_flag"
-          error={props.passFlag&&props.checkError}
-          helperText={(props.passFlags&&props.checkError) ? "英数字のみ入力可能です" : (props.passFlag&&props.checkError) ? "パスワードを入力してください" : ""}
+          error={props.checkError&&((props.passFlag)||(props.passFlags))}
+          helperText={(props.passFlag&&props.checkError) ? "入力されていません" : (props.passFlags&&props.checkError) ? "英数字のみ入力してください" : ""}
         />
       </div>
     </div>
