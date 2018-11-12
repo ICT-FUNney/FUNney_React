@@ -1,0 +1,30 @@
+.FUNneyLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15vh;
+}
+
+.SignInForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+}
+
+.SignInButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SignInFUNneyLogo {
+  width: 4em;
+  height: 4em;
+}
+
+.SignInFUNney {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

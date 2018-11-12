@@ -50,6 +50,7 @@
 
 .Signout{
   width: 80%;
+  width: calc((90vw - 230px));
   height: 70vh;
   border: solid 1px black;
   margin-top: 15vh;
@@ -58,10 +59,6 @@
   justify-content: center;
   align-items: center;
 }
-
-
-
-
 
 .Sidebar__FUNneyLogo{
   width: 2em;
@@ -73,5 +70,3 @@
   height: 2em;
   margin-right: 10px;
 }
-
-
