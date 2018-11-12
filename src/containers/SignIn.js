@@ -21,7 +21,7 @@ class SignIn extends Component {
   }
   handleChange(e) {
     const regNumSignIn = new RegExp(/^[0-9]+$/)
-    const regEngSignIn = new RegExp(/^[a-zA-Z]+$/)
+    const regEngSignIn = new RegExp(/^[a-zA-Z0-9]+$/)
     this.setState({
       [e.target.id] : e.target.value,
     })
@@ -32,12 +32,9 @@ class SignIn extends Component {
     }
     if(e.target.id === "studentId" && (!(regNumSignIn.test(e.target.value)))){
       this.changeFlag(e.target.id + "_flags", true);
-    }else if(e.target.id === "studentId" && (regNumSignIn.test(e.target.value))){
-      this.changeFlag(e.target.id + "_flags", false);
-    }
-    if(e.target.id === "password" && (!(regEngSignIn.test(e.target.value)))){
+    }else if(e.target.id === "password" && (!(regEngSignIn.test(e.target.value)))){
       this.changeFlag(e.target.id + "_flags", true);
-    }else if(e.target.id === "password" && (regEngSignIn.test(e.target.value))){
+    }else{
       this.changeFlag(e.target.id + "_flags", false);
     }
   }
@@ -53,9 +50,6 @@ class SignIn extends Component {
         error:true,
       })
     } else {
-      this.setState({
-        error:false,
-      })
       this.props.history.push('/home');
     }
   }
@@ -77,8 +71,8 @@ class SignIn extends Component {
             sIdFlag={this.state.studentId_flag}
             passFlag={this.state.password_flag}
             checkError={this.state.error}
-            sIdFlags={this.studentId_flags}
-            passFlags={this.password_flags}
+            sIdFlags={this.state.studentId_flags}
+            passFlags={this.state.password_flags}
             changeForm={
               e => {
                 this.handleChange(e)
