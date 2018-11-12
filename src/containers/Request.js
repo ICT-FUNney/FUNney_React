@@ -32,7 +32,8 @@ clickSendRequest(){
     if(this.state.name !== "" && this.state.defaultValue !== "" &&
       this.state.requestSelect !== "noselect" && checkNumber.test(this.state.name)
     && checkNumber.test(this.state.defaultValue)){
-      this.props.history.push('/home');
+      this.props.history.push('/request');
+
       }
     }
 
