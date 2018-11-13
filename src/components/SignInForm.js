@@ -30,6 +30,7 @@ const SignInForm=(props)=>{
         <TextField
           id="studentId"
           label="学籍番号"
+          InputLabelProps={{error: false}}
           className={classes.textField}
           onChange={
             e => {
@@ -47,6 +48,7 @@ const SignInForm=(props)=>{
         <TextField
           id="password"
           label="パスワード"
+          InputLabelProps={{error: false}}
           className={classes.textField}
           onChange={
             e => {
