@@ -5,31 +5,33 @@
   margin-top: 15vh;
 }
 
-.SignInForm {
+.SignUpFUNney {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30vh;
+  font-size: 125%;
+  margin-top: 1vh;
 }
 
-.SignInButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.SignUpFUNneyLogo {
+  width: 5em;
+  height: 5em;
 }
 
-.SignInFUNneyLogo {
-  width: 4em;
-  height: 4em;
-}
-
-.SignInFUNney {
+.SignUpForm {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.SignInHref {
+.SignUpButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2vh;
+}
+
+.SignUpHref {
   display: flex;
   justify-content: center;
   align-items: center;

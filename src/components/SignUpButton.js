@@ -12,10 +12,18 @@ const styles = theme => ({
 });
 
 const SignUpButton=(props)=>{
-  const { classes} = props;
+  const { classes } = props;
   return(
     <div>
-      <Button variant="contained" color="secondary" className={classes.button}>
+      <Button
+        variant="contained"
+        color="secondary"
+        className={classes.button}
+        onClick={
+          e => {
+            props.clickTask()
+          }
+        }>
         新規登録
       </Button>
     </div>
