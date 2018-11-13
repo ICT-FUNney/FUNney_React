@@ -25,11 +25,12 @@ class AppSend extends Component {
 
 	sendSubmit=e=>{
 		e.preventDefault()
-		let isNumber=new RegExp(/^\d\d*$/);
+		let isMoneyNumber=new RegExp(/^\d\d*$/);
+		let isStudentNumber=new RegExp(/^(b|\d)\d*$/);
 		let trimMoney=this.state.sendMoney.trim();
 		let trimNum=this.state.studentNum.trim();
-		let sendMoneyValue=isNumber.test(trimMoney);
-		let studentNumValue=isNumber.test(trimNum);
+		let sendMoneyValue=isMoneyNumber.test(trimMoney);
+		let studentNumValue=isStudentNumber.test(trimNum);
 		if(!studentNumValue||!sendMoneyValue){
 			this.setState({
 				errorMoney: (!sendMoneyValue)? true: false,
