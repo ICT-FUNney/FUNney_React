@@ -43,6 +43,7 @@ class SignIn extends Component {
       [errorFlag] : tf,
     })
   }
+
   changeLink() {
     if(this.state.studentId_flag === true || this.state.password_flag === true || this.state.studentId_flags === true || this.state.password_flags === true){
       this.setState({
