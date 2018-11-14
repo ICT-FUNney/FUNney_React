@@ -1,16 +1,9 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-<<<<<<< HEAD
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
-=======
-import Typography from '@material-ui/core/Typography';
-import Modal from '@material-ui/core/Modal';
-import TextField from '@material-ui/core/TextField';
-
->>>>>>> TextFieldでの記述に変更
 
 const styles = theme => ({
   textField: {
@@ -57,31 +50,6 @@ const Send = (props) =>{
 				onSubmit={e=>{props.sendSubmit(e)}}
       >
         <div>
-<<<<<<< HEAD
-          <TextField
-            id="sendMoney"
-            name="sendMoney"
-            helperText={props.errorMoneyText}
-            error={props.errorMoney}
-            label="送金金額"
-            className={classes.textField}
-            onChange={e=>{props.handleChange(e)}}
-            value={props.sendMoney}
-            margin="normal"
-          />
-        </div>
-        <div>
-          <TextField
-            id="studentNum"
-            name="studentNum"
-            helperText={props.errorNumText}
-            error={props.errorNum}
-            label="送り先 学籍番号"
-            className={classes.textField}
-            onChange={e=>{props.handleChange(e)}}
-            value={props.studentNum}
-            margin="normal"
-=======
           <TextField　className={classes.textField}
             label="送金金額"
             id="sendMoney"
@@ -102,12 +70,7 @@ const Send = (props) =>{
             onChange={e=>{props.handleChange(e)}}
             InputLabelProps={{error: false}}
             value={props.studentNum}
-<<<<<<< HEAD
-            helperText={props.errorEmptyNum?"入力されていません":props.errorNum?"半角数字のみ入力してください":""}
->>>>>>> TextFieldでの記述に変更
-=======
             helperText={props.errorEmptyNum? errEmpMes : (props.errorNum? errNumMes :"")}
->>>>>>> バグの修正
           />
         </div>
         <div>
