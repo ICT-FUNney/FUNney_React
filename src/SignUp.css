@@ -3,16 +3,18 @@
   height: 100vh;
   position: fixed;
   background-image: url('./Image/funney.png');
+  background-size: cover;
 }
 
 .SignUp {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  width: 30vw;
+  width: 34vw;
   height: 100vh;
-  margin-left: 35vw;
+  margin-left: 33vw;
   background-color: white;
+  box-shadow: 0 0 10px 10px white;
 }
 
 .FUNneyLogo {
