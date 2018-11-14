@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
+    background: "#ff9100",
   },
   input: {
     display: 'none',
@@ -17,7 +18,6 @@ const SignUpButton=(props)=>{
     <div>
       <Button
         variant="contained"
-        color="secondary"
         className={classes.button}
         onClick={
           e => {

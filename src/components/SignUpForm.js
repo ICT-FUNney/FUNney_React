@@ -29,6 +29,7 @@ const SignUpForm=(props)=>{
             }
           }
           value={props.studentid}
+          InputLabelProps={{error: false}}
           error={props.checkError&&((props.studentidFlag)||(props.studentidFlags))}
           helperText={(props.studentidFlag&&props.checkError) ? "入力されていません" : (props.studentidFlags&&props.checkError) ? "数字のみ入力してください" : ""}
           margin="normal"
@@ -47,6 +48,7 @@ const SignUpForm=(props)=>{
           type="password"
           autoComplete="current-password"
           value={props.password}
+          InputLabelProps={{error: false}}
           error={props.checkError&&((props.passwordFlag)||(props.passwordFlags))}
           helperText={(props.passwordFlag&&props.checkError) ? "入力されていません" : (props.passwordFlags&&props.checkError) ? "英数字のみ入力してください" : ""}
           margin="normal"
@@ -65,6 +67,7 @@ const SignUpForm=(props)=>{
           type="password"
           autoComplete="current-password"
           value={props.repassword}
+          InputLabelProps={{error: false}}
           error={props.checkError&&((props.repasswordFlag)||(props.repasswordFlags)||(!(props.repassword === props.password)))}
           helperText={(props.repasswordFlag&&props.checkError) ? "入力されていません" : (props.repasswordFlags&&props.checkError) ? "英数字のみ入力してください" : (props.checkError)&&(!(props.repassword === props.password)) ? "パスワードの値と異なります" : ""}
           margin="normal"

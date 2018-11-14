@@ -61,42 +61,44 @@ class SignUp extends Component {
   render(){
     console.log(this.state);
     return(
-      <div className="SignUp">
-        <div className="FUNneyLogo">
-          <img src={FUNneyLogo} className="SignUpFUNneyLogo" alt="logo"/>
-        </div>
-        <div>
-          <b className="SignUpFUNney">FUNney</b>
-        </div>
-        <div className="SignUpForm">
-          <SignUpForm
-            studentid={this.state.studentId}
-            password={this.state.password}
-            repassword={this.state.passwordRe}
-            studentidFlag={this.state.studentId_flag}
-            passwordFlag={this.state.password_flag}
-            repasswordFlag={this.state.passwordRe_flag}
-            studentidFlags={this.state.studentId_flags}
-            passwordFlags={this.state.password_flags}
-            repasswordFlags={this.state.password_flags}
-            checkError={this.state.error}
-            changeForm={
+      <div className="SignUpBackground">
+        <div className="SignUp">
+          <div className="FUNneyLogo">
+            <img src={FUNneyLogo} className="SignUpFUNneyLogo" alt="logo"/>
+          </div>
+          <div>
+            <b className="SignUpFUNney">FUNney</b>
+          </div>
+          <div className="SignUpForm">
+            <SignUpForm
+              studentid={this.state.studentId}
+              password={this.state.password}
+              repassword={this.state.passwordRe}
+              studentidFlag={this.state.studentId_flag}
+              passwordFlag={this.state.password_flag}
+              repasswordFlag={this.state.passwordRe_flag}
+              studentidFlags={this.state.studentId_flags}
+              passwordFlags={this.state.password_flags}
+              repasswordFlags={this.state.password_flags}
+              checkError={this.state.error}
+              changeForm={
+                e => {
+                  this.handleChange(e)
+                }
+              }/>
+          </div>
+          <div className="SignUpButton">
+            <SignUpButton clickTask={
               e => {
-                this.handleChange(e)
+                this.changeLink();
               }
-            }/>
-        </div>
-        <div className="SignUpButton">
-          <SignUpButton clickTask={
-            e => {
-              this.changeLink();
-            }
-          } />
-        </div>
-        <div className="SignUpHref">
-          <a href="/">
-            既に登録されている方はこちら
-          </a>
+            } />
+          </div>
+          <div className="SignUpHref">
+            <a href="/">
+              既に登録されている方はこちら
+            </a>
+          </div>
         </div>
       </div>
     )

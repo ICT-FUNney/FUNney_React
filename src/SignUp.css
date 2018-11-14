@@ -1,8 +1,24 @@
+.SignUpBackground {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-image: url('./Image/funney.png');
+}
+
+.SignUp {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  width: 30vw;
+  height: 100vh;
+  margin-left: 35vw;
+  background-color: white;
+}
+
 .FUNneyLogo {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 15vh;
 }
 
 .SignUpFUNney {
@@ -22,6 +38,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 5vh;
 }
 
 .SignUpButton {
