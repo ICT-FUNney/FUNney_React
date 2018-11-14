@@ -61,8 +61,6 @@ class AppSend extends Component {
 		});
 	};
 	render(){
-		let errorNumMes='半角数字のみ入力してください';
-		let errorSpaceMes="入力されていません";
 		return (
 			<div className='Send'>
 				<Send

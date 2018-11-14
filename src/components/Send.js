@@ -1,9 +1,16 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+<<<<<<< HEAD
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
+=======
+import Typography from '@material-ui/core/Typography';
+import Modal from '@material-ui/core/Modal';
+import TextField from '@material-ui/core/TextField';
+
+>>>>>>> TextFieldでの記述に変更
 
 const styles = theme => ({
   textField: {
@@ -48,6 +55,7 @@ const Send = (props) =>{
 				onSubmit={e=>{props.sendSubmit(e)}}
       >
         <div>
+<<<<<<< HEAD
           <TextField
             id="sendMoney"
             name="sendMoney"
@@ -71,6 +79,28 @@ const Send = (props) =>{
             onChange={e=>{props.handleChange(e)}}
             value={props.studentNum}
             margin="normal"
+=======
+          <TextField　className={classes.textField}
+            label="送金金額"              
+            id="sendMoney"
+            name="sendMoney"
+            error={props.errorMoney||props.errorMoneyEmpty}
+            onChange={e=>{props.handleChange(e)}}
+            InputLabelProps={{error: false}}
+            value={props.sendMoney}
+            helperText={props.errorEmptyMoney?"入力されていません":props.errorMoney?"半角数字のみ入力してください":""}
+          />
+        </div>
+        <div>
+          <TextField className={classes.textField}
+            label="送信先 学籍番号"
+            id="studentNum"
+            name="studentNum"
+            error={props.errorNum||props.errorNumEmpty}
+            onChange={e=>{props.handleChange(e)}}
+            value={props.studentNum}
+            helperText={props.errorEmptyNum?"入力されていません":props.errorNum?"半角数字のみ入力してください":""}
+>>>>>>> TextFieldでの記述に変更
           />
         </div>
         <div>
@@ -79,9 +109,9 @@ const Send = (props) =>{
             color="primary"
             className={classes.submitButton}
             type="submit"
-          >
+          ></Button>
             send
-          </Button>
+          />
         </div>
       </form>
       <Modal
