@@ -109,9 +109,9 @@ const Send = (props) =>{
             color="primary"
             className={classes.submitButton}
             type="submit"
-          ></Button>
+          >
             send
-          />
+          </Button>
         </div>
       </form>
       <Modal
