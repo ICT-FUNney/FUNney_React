@@ -25,8 +25,13 @@ class AppSend extends Component {
 
 	sendSubmit=e=>{
 		e.preventDefault()
+<<<<<<< HEAD
 		let isMoneyNumber=new RegExp(/^\d\d*$/);
 		let isStudentNumber=new RegExp(/^(b|\d)\d*$/);
+=======
+		let isNum=new RegExp(/^(b|\d)\d*$/);
+		let isMoney=new RegExp(/^\d\d*$/);
+>>>>>>> バグの修正
 		let trimMoney=this.state.sendMoney.trim();
 		let trimNum=this.state.studentNum.trim();
 		let sendMoneyValue=isMoneyNumber.test(trimMoney);
@@ -72,9 +77,13 @@ class AppSend extends Component {
 					submitModal={this.state.submitModal}
 					closeModal={this.closeModal}
 					sendDetermine={this.sendDetermine}
+<<<<<<< HEAD
           handleChange={(e)=>{this.handleChange(e)}}
           sendMoney={this.state.sendMoney}
           studentNum={this.state.studentNum}
+=======
+					handleChange={(e)=>{this.handleChange(e)}}
+>>>>>>> バグの修正
         />
       </div>
 		);

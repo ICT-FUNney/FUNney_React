@@ -47,6 +47,8 @@ const styles = theme => ({
 });
 const Send = (props) =>{
   const { classes } = props;
+  const errEmpMes="入力されていません";
+  const errNumMes="半角数字のみ入力してください";
   return (
     <div>
       <form
@@ -81,14 +83,14 @@ const Send = (props) =>{
             margin="normal"
 =======
           <TextField　className={classes.textField}
-            label="送金金額"              
+            label="送金金額"
             id="sendMoney"
             name="sendMoney"
             error={props.errorMoney||props.errorMoneyEmpty}
             onChange={e=>{props.handleChange(e)}}
             InputLabelProps={{error: false}}
             value={props.sendMoney}
-            helperText={props.errorEmptyMoney?"入力されていません":props.errorMoney?"半角数字のみ入力してください":""}
+            helperText={props.errorEmptyMoney? errEmpMes : (props.errorMoney? errNumMes :"")}
           />
         </div>
         <div>
@@ -98,9 +100,14 @@ const Send = (props) =>{
             name="studentNum"
             error={props.errorNum||props.errorNumEmpty}
             onChange={e=>{props.handleChange(e)}}
+            InputLabelProps={{error: false}}
             value={props.studentNum}
+<<<<<<< HEAD
             helperText={props.errorEmptyNum?"入力されていません":props.errorNum?"半角数字のみ入力してください":""}
 >>>>>>> TextFieldでの記述に変更
+=======
+            helperText={props.errorEmptyNum? errEmpMes : (props.errorNum? errNumMes :"")}
+>>>>>>> バグの修正
           />
         </div>
         <div>
