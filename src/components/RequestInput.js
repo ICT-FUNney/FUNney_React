@@ -40,6 +40,7 @@ const RequestInput = (props) => {
          error={props.errorFlagNameNumber || props.errorFlagName}
          helperText ={(props.errorFlagName)? "入力されていません": (props.errorFlagNameNumber)? "数字のみ入力してください" : ""}
          label="要求金額"
+         InputLabelProps={{error: false}}
          defaultValue=""
          className={classes.textField}
          value={props.name}
@@ -54,6 +55,7 @@ const RequestInput = (props) => {
           helperText ={(props.errorFlagDefaultValue)? "入力されていません":(props.errorFlagDefaultValueNumber) ? "数字のみ入力してください" : ""}
           error={props.errorFlagDefaultValueNumber || props.errorFlagDefaultValue}
           label="送り先学籍番号"
+          InputLabelProps={{error: false}}
           className={classes.textField}
           value={props.defaultValue}
           onChange={e=>{props.handleChange(e)}}
@@ -67,6 +69,7 @@ const RequestInput = (props) => {
          error={props.errorFlagRequestSelect}
          select
          label="要求方法"
+         InputLabelProps={{error: false}}
          className={classes.textField}
          value={props.requestSelect}
          onChange={e=>{props.handleChange(e)}}
