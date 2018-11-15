@@ -15,23 +15,25 @@
   box-shadow: 0 0 10px 10px white;
 }
 
-.FUNneyLogo {
+.SignUpFUNneyLogo1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 5vh;
 }
 
 .SignUpFUNney {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 125%;
-  margin-top: 3vh;
+  font-family: cursive;
+  font-size: 220%;
+  margin-top: 2vh;
 }
 
-.SignUpFUNneyLogo {
-  width: 5em;
-  height: 5em;
+.SignUpFUNneyLogo2 {
+  width: 7em;
+  height: 7em;
 }
 
 .SignUpForm {
