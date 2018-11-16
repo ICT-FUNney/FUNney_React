@@ -56,6 +56,7 @@ class SignIn extends Component {
   render() {
     console.log(this.state);
     return (
+      <div className="SignInBackground">
       <div className="SignIn">
         <div className="FUNneyLogo">
           <img src={FUNneyLogo} className="SignInFUNneyLogo" alt="logo"/>
@@ -92,6 +93,7 @@ class SignIn extends Component {
           </a>
         </div>
       </div>
+    </div>
     );
   }
 }
