@@ -4,7 +4,6 @@ import SignInButton from '../components/SignInButton.js';
 import FUNneyLogo from '../Image/FUNneyLogo.png';
 import '../SignIn.css';
 import { withRouter } from 'react-router';
-import AppMenubar from './AppMenubar.js';
 
 class SignIn extends Component {
   constructor(props) {
@@ -45,7 +44,7 @@ class SignIn extends Component {
     })
   }
   changeLink() {
-    if(this.state.studentId_flag === true || this.state.password_flag === true || this.state.studentId_flags === true || this.state.password_flags){
+    if(this.state.studentId_flag === true || this.state.password_flag === true || this.state.studentId_flags === true || this.state.password_flags === true){
       this.setState({
         error:true,
       })
@@ -57,7 +56,6 @@ class SignIn extends Component {
     console.log(this.state);
     return (
       <div className="SignIn">
-        <AppMenubar />
         <div className="FUNneyLogo">
           <img src={FUNneyLogo} className="SignInFUNneyLogo" alt="logo"/>
         </div>
@@ -86,6 +84,11 @@ class SignIn extends Component {
               this.changeLink(e)
             }
           }/>
+        </div>
+        <div className="SignInHref">
+          <a href="/signup">
+            初めての方はこちら
+          </a>
         </div>
       </div>
     );

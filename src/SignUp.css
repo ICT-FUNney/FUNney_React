@@ -1,0 +1,63 @@
+.SignUpBackground {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-image: url('./Image/funney.png');
+  background-size: cover;
+}
+
+.SignUp {
+  position: fixed;
+  height: 100vh;
+  width: 34vw;
+  margin-left: 33vw;
+  background-color: white;
+  box-shadow: 0 0 10px 1px gray;
+}
+
+.SignUpFUNneyLogo1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+}
+
+.SignUpFUNney {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: cursive;
+  font-size: 220%;
+  margin-top: 2vh;
+}
+
+.SignUpFUNneyLogo2 {
+  width: 9em;
+  height: 9em;
+}
+
+.SignUpForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+}
+
+.SignUpButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6vh;
+}
+
+.SignUpHref {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4vh;
+}
+
+a {
+  color: #FF6600;
+  text-decoration: none;
+}

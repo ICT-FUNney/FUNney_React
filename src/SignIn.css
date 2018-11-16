@@ -9,7 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40vh;
+  height: 30vh;
 }
 
 .SignInButton {
@@ -27,4 +27,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.SignInHref {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2vh;
 }

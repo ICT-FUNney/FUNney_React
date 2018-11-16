@@ -7,6 +7,7 @@ import AppMenubar from './containers/AppMenubar.js';
 import AppSidebar from './containers/AppSidebar.js';
 
 import SignIn from './containers/SignIn.js';
+import SignUp from './containers/SignUp.js';
 import Home from './containers/Home.js';
 import AppSend from './containers/AppSend.js';
 import Request from './containers/Request.js';
@@ -31,8 +32,8 @@ class App extends Component {
   render() {
       console.log(this.state)
       return(
-        <div className={(this.state.sidebarOpen && this.state.link !== "/") ? "App" : "App_NoSidebar"}>
-          { this.props.history.location.pathname !== '/' ?
+        <div className={(this.state.sidebarOpen && ((this.state.link !== "/") && (this.state.link !== "/signup"))) ? "App" : "App_NoSidebar"}>
+          {this.props.history.location.pathname !== '/' && this.props.history.location.pathname !== '/signup' ?
             <div>
               <AppMenubar sidebarOpen = {() => {
                 this.setState({
@@ -52,6 +53,7 @@ class App extends Component {
           }
           <Switch>
             <Route exact path="/" component={SignIn} />
+            <Route exact path="/signup" component={SignUp} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/send" component={AppSend} />
             <Route exact path="/request" component={Request} />
