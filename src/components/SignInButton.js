@@ -7,9 +7,6 @@ const styles = theme => ({
     margin: theme.spacing.unit,
     background: "#ff9100",
   },
-  input: {
-    display: 'none',
-  },
 });
 
 const SignInButton=(props)=>{
