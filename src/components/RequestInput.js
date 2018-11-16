@@ -38,7 +38,7 @@ const RequestInput = (props) => {
         <TextField
          id="standard-uncontrolled"
          error={props.errorFlagNameNumber || props.errorFlagName}
-         helperText ={(props.errorFlagName)? "入力されていません": (props.errorFlagNameNumber)? "数字のみ入力してください" : ""}
+         helperText ={(props.errorFlagName)? "入力されていません": (props.errorFlagNameNumber)? "半角数字のみ入力してください" : ""}
          label="要求金額"
          InputLabelProps={{error: false}}
          defaultValue=""
@@ -52,7 +52,7 @@ const RequestInput = (props) => {
       <div>
         <TextField
           id="standard-name"
-          helperText ={(props.errorFlagDefaultValue)? "入力されていません":(props.errorFlagDefaultValueNumber) ? "数字のみ入力してください" : ""}
+          helperText ={(props.errorFlagDefaultValue)? "入力されていません":(props.errorFlagDefaultValueNumber) ? "半角数字のみ入力してください" : ""}
           error={props.errorFlagDefaultValueNumber || props.errorFlagDefaultValue}
           label="送り先学籍番号"
           InputLabelProps={{error: false}}
