@@ -8,9 +8,10 @@ class AppSend extends Component {
 		errorMoney: false,
 		errorNum: false,
 		submitModal: false,
-		isSpaceNum: false,
-		isSpaceMoney: false,
+		errorEmptyNum: false,
+		errorEmptyMoney: false,
 	};
+	
 	handleChange =e=> {
     this.setState({
       [e.target.name]: e.target.value,
@@ -35,8 +36,8 @@ class AppSend extends Component {
 			this.setState({
 				errorMoney: (!sendMoneyValue)? true: false,
 				errorNum: (!studentNumValue)? true: false,
-				isSpaceMoney: (!trimMoney)? true:false,
-				isSpaceNum: (!trimNum)? true:false,
+				errorEmptyMoney: (!trimMoney)? true:false,
+				errorEmptyNum: (!trimNum)? true:false,
 			})
 			return
 		}
@@ -44,8 +45,8 @@ class AppSend extends Component {
 			submitModal: true,
 			errorMoney: false,
 			errorNum: false,
-			isSpaceMoney: false,
-			isSpaceNum: false,
+			errorEmptyMoney: false,
+			errorEmptyNum: false,
 		});
 	};
 
@@ -55,8 +56,8 @@ class AppSend extends Component {
 			studentNum: '',
 			errorMoney: false,
 			errorNum: false,
-			isSpaceMoney: false,
-			isSpaceNum: false,
+			errorEmptyMoney: false,
+			errorEmptyNum: false,
 			submitModal: false,
 		});
 	};
@@ -67,8 +68,8 @@ class AppSend extends Component {
 					sendSubmit={(e)=>{this.sendSubmit(e)}}
 					errorMoney={this.state.errorMoney}
 					errorNum={this.state.errorNum}
-					errorEmptyNum={this.state.isSpaceNum}
-					errorEmptyMoney={this.state.isSpaceMoney}
+					errorEmptyNum={this.state.errorEmptyNum}
+					errorEmptyMoney={this.state.errorEmptyMoney}
 					submitModal={this.state.submitModal}
 					closeModal={this.closeModal}
 					sendDetermine={this.sendDetermine}
