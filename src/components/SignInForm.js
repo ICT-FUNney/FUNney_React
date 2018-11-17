@@ -2,6 +2,7 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
+
 const styles = theme => ({
   container: {
     display: 'flex',
@@ -29,6 +30,7 @@ const SignInForm=(props)=>{
         <TextField
           id="studentId"
           label="学籍番号"
+          InputLabelProps={{error: false}}
           className={classes.textField}
           onChange={
             e => {
@@ -46,6 +48,7 @@ const SignInForm=(props)=>{
         <TextField
           id="password"
           label="パスワード"
+          InputLabelProps={{error: false}}
           className={classes.textField}
           onChange={
             e => {

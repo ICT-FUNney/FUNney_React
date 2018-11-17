@@ -1,8 +1,25 @@
+.SignInBackground {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-image: url('./Image/funney.png');
+  background-size: cover;
+}
+
 .FUNneyLogo {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 15vh;
+  margin-top: 5vh;
+}
+
+.SignIn {
+  position: fixed;
+  height: 100vh;
+  width: 34vw;
+  margin-left: 33vw;
+  background-color: white;
+  box-shadow: 0 0 10px 1px gray;
 }
 
 .SignInForm {
@@ -19,14 +36,30 @@
 }
 
 .SignInFUNneyLogo {
-  width: 4em;
-  height: 4em;
+  width: 9em;
+  height: 9em;
 }
 
 .SignInFUNney {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 2vh;
+  font-size: 220%;
+  font-family: cursive;
+}
+
+.SignInHref{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+a {
+color: #FF6600;
+text-decoration: none;
+font-size: 90%;
 }
 
 .SignInHref {
