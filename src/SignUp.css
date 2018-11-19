@@ -1,60 +1,123 @@
-.SignUpBackground {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  background-image: url('./Image/funney.png');
-  background-size: cover;
+@media screen and (min-width:0px){
+  .SignUpBackground {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-image: url('./Image/funney.png');
+    background-size: cover;
+    background-position: 220px;
+  }
+  .SignUp {
+    height: 100vh;
+    width: 90vw;
+    margin-left: 5vw;
+    background-color: white;
+    box-shadow: 0 0 10px 2px gray;
+  }
+
+  .SignUpFUNneyLogo1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+  }
+
+  .SignUpFUNney {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: cursive;
+    font-size: 220%;
+    margin-top: 5vh;
+  }
+
+  .SignUpFUNneyLogo2 {
+    width: 11em;
+    height: 11em;
+    margin-top: 10vh;
+  }
+
+  .SignUpForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+  }
+
+  .SignUpButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6vh;
+  }
+
+  .SignUpHref {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4vh;
+  }
 }
 
-.SignUp {
-  position: fixed;
-  height: 100vh;
-  width: 34vw;
-  margin-left: 33vw;
-  background-color: white;
-  box-shadow: 0 0 10px 1px gray;
-}
+@media screen and (min-width:766px) {
+  .SignUpBackground {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-image: url('./Image/funney.png');
+    background-size: cover;
+  }
 
-.SignUpFUNneyLogo1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5vh;
-}
+  .SignUp {
+    position: fixed;
+    height: 100vh;
+    width: 34vw;
+    margin-left: 33vw;
+    background-color: white;
+    box-shadow: 0 0 10px 1px gray;
+  }
 
-.SignUpFUNney {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: cursive;
-  font-size: 220%;
-  margin-top: 2vh;
-}
+  .SignUpFUNneyLogo1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+  }
 
-.SignUpFUNneyLogo2 {
-  width: 9em;
-  height: 9em;
-}
+  .SignUpFUNney {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: cursive;
+    font-size: 220%;
+    margin-top: 2vh;
+  }
 
-.SignUpForm {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5vh;
-}
+  .SignUpFUNneyLogo2 {
+    width: 9em;
+    height: 9em;
+  }
 
-.SignUpButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 6vh;
-}
+  .SignUpForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+  }
 
-.SignUpHref {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 4vh;
+  .SignUpButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6vh;
+  }
+
+  .SignUpHref {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4vh;
+  }
 }
 
 a {

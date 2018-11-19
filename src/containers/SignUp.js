@@ -66,9 +66,7 @@ class SignUp extends Component {
           <div className="SignUpFUNneyLogo1">
             <img src={FUNneyLogo} className="SignUpFUNneyLogo2" alt="logo"/>
           </div>
-          <div>
-            <b className="SignUpFUNney">FUNney</b>
-          </div>
+          <b className="SignUpFUNney">FUNney</b>
           <div className="SignUpForm">
             <SignUpForm
               studentid={this.state.studentId}
