@@ -61,6 +61,8 @@ const Send = (props) =>{
             helperText={props.errorEmptyMoney? errEmpMes : (props.errorMoney? errNumMes :"")}
           />
         </div>
+        {!(props.errorEmptyMoney||props.errorMoney)?<br/>:null}
+        <br/>
         <div>
           <TextField className={classes.textField}
             label="送信先 学籍番号"
@@ -73,6 +75,8 @@ const Send = (props) =>{
             helperText={props.errorEmptyNum? errEmpMes : (props.errorNum? errNumMes :"")}
           />
         </div>
+        {!(props.errorEmptyNum||props.errorNum)?<br/>:null}
+        <br/>
         <div>
           <Button
             variant="contained"
