@@ -64,23 +64,20 @@
     position: fixed;
     background-image: url('./Image/funney.png');
     background-size: cover;
-    background-position: 5vw;
+    background-position: 0.1vw;
   }
 
   .SignUp {
     position: fixed;
     height: 100vh;
     width: 500px;
-    margin-left: 33vw;
+    margin-left: calc((100vw - 500px)/2);
     background-color: white;
     box-shadow: 0 0 10px 1px gray;
   }
 
   .SignUpFUNneyLogoPosition {
-    display: flex;
-    margin-right: 50vw;
-    margin-top: 5vh;
-    margin-left: -30vw;
+    width: 500px;
   }
 
   .SignUpFUNney {
