@@ -16,7 +16,7 @@ class App extends Component {
 
   render() {
     return(
-      (window.innerWidth >= 765) ? <BrowserRouter><AppWeb/></BrowserRouter> : <BrowserRouter><AppMobile/></BrowserRouter>
+      (window.innerWidth >= 1024) ? <BrowserRouter><AppWeb/></BrowserRouter> : <BrowserRouter><AppMobile/></BrowserRouter>
     );
   }
 }
