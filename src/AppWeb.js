@@ -16,11 +16,16 @@ import Signout from './containers/Signout.js';
 
 import LoginCheck from './LoginCheck.js';
 
+
 class AppWeb extends Component {
   constructor(props) {
     super(props);
+    console.log(this.props.login_flag)
+    if(this.props.login_flag === true){
+      this.props.history.push('/home');
+      console.log("aaaaa",this.props.login_flag)
+    }
     this.state = {
-      login_flag: false,
       sidebarOpen: true,
       link: this.props.history.location.pathname
     }
@@ -31,6 +36,11 @@ class AppWeb extends Component {
         sidebarOpen: prevState.sidebarOpen,
         link: nextProps.history.location.pathname
       };
+  }
+  componentDidUpdate(){
+    if(this.props.login_flag == true && this.props.history.location.pathname === '/' || this.props.history.location.pathname === '/signup'){
+      this.props.history.push('/home');
+    }
   }
   render() {
       console.log(this.state)
@@ -55,17 +65,17 @@ class AppWeb extends Component {
             : null
           }
           <Switch>
-            <Route exact path="/"render={
-              props => <SignIn successLogin = {() => {this.props.changeLogin()}} />
+            <Route exact path="/"
+              render={props => <SignIn successLogin = {() => {this.props.changeLogin()}} />
             }/>
             <Route exact path="/signup" component={SignUp} />
-            <LoginCheck flag = {this.state.login_flag}>
+            <LoginCheck flag = {this.props.login_flag} >
               <Switch>
-                  <Route exact path="/home" component={Home} />
-                  <Route exact path="/send" component={AppSend} />
-                  <Route exact path="/request" component={Request} />
-                  <Route exact path="/setting" component={Setting} />
-                  <Route exact path="/signout" component={Signout} />
+                <Route exact path="/home" component={Home} />
+                <Route exact path="/send" component={AppSend} />
+                <Route exact path="/request" component={Request} />
+                <Route exact path="/setting" component={Setting} />
+                <Route exact path="/signout" component={Signout} />
               </Switch>
             </LoginCheck>
           </Switch>
