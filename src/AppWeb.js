@@ -14,10 +14,13 @@ import Request from './containers/Request.js';
 import Setting from './containers/Setting.js';
 import Signout from './containers/Signout.js';
 
+import LoginCheck from './LoginCheck.js';
+
 class AppWeb extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      login_flag: false,
       sidebarOpen: true,
       link: this.props.history.location.pathname
     }
@@ -52,13 +55,19 @@ class AppWeb extends Component {
             : null
           }
           <Switch>
-            <Route exact path="/" component={SignIn} />
+            <Route exact path="/"render={
+              props => <SignIn successLogin = {() => {this.props.changeLogin()}} />
+            }/>
             <Route exact path="/signup" component={SignUp} />
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/send" component={AppSend} />
-            <Route exact path="/request" component={Request} />
-            <Route exact path="/setting" component={Setting} />
-            <Route exact path="/signout" component={Signout} />
+            <LoginCheck flag = {this.state.login_flag}>
+              <Switch>
+                  <Route exact path="/home" component={Home} />
+                  <Route exact path="/send" component={AppSend} />
+                  <Route exact path="/request" component={Request} />
+                  <Route exact path="/setting" component={Setting} />
+                  <Route exact path="/signout" component={Signout} />
+              </Switch>
+            </LoginCheck>
           </Switch>
         </div>
       );
