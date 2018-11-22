@@ -8,12 +8,11 @@ class AppSend extends Component {
 		errorMoney: false,
 		errorNum: false,
 		submitModal: false,
+		errorEmptyNum: false,
+		errorEmptyMoney: false,
 	};
+	
 	handleChange =e=> {
-		let number=new RegExp(/^\d*$/);
-		if(!number.test(e.target.value)){
-			return
-		}
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -26,11 +25,19 @@ class AppSend extends Component {
 	};
 
 	sendSubmit=e=>{
-		e.preventDefault()
-		if(!this.state.sendMoney.trim()||!this.state.studentNum.trim()){
+		e.preventDefault();
+		let isMoneyNumber=new RegExp(/^\d\d*$/);
+		let isStudentNumber=new RegExp(/^(b|\d)\d*$/);
+		let trimMoney=this.state.sendMoney.trim();
+		let trimNum=this.state.studentNum.trim();
+		let sendMoneyValue=isMoneyNumber.test(trimMoney);
+		let studentNumValue=isStudentNumber.test(trimNum);
+		if(!studentNumValue||!sendMoneyValue){
 			this.setState({
-				errorMoney: (!this.state.sendMoney.trim())? true: false,
-				errorNum: (!this.state.studentNum.trim())? true: false,
+				errorMoney: (!sendMoneyValue)? true: false,
+				errorNum: (!studentNumValue)? true: false,
+				errorEmptyMoney: (!trimMoney)? true:false,
+				errorEmptyNum: (!trimNum)? true:false,
 			})
 			return
 		}
@@ -38,6 +45,8 @@ class AppSend extends Component {
 			submitModal: true,
 			errorMoney: false,
 			errorNum: false,
+			errorEmptyMoney: false,
+			errorEmptyNum: false,
 		});
 	};
 
@@ -47,18 +56,20 @@ class AppSend extends Component {
 			studentNum: '',
 			errorMoney: false,
 			errorNum: false,
+			errorEmptyMoney: false,
+			errorEmptyNum: false,
+			submitModal: false,
 		});
-		this.props.history.push('/home');
 	};
 	render(){
 		return (
 			<div className='Send'>
 				<Send
 					sendSubmit={(e)=>{this.sendSubmit(e)}}
-					errorNumText={this.state.errorNum?'学籍番号を入力してください':''}
-					errorMoneyText={this.state.errorMoney?'送金金額を入力してください':''}
 					errorMoney={this.state.errorMoney}
 					errorNum={this.state.errorNum}
+					errorEmptyNum={this.state.errorEmptyNum}
+					errorEmptyMoney={this.state.errorEmptyMoney}
 					submitModal={this.state.submitModal}
 					closeModal={this.closeModal}
 					sendDetermine={this.sendDetermine}

@@ -40,6 +40,8 @@ const styles = theme => ({
 });
 const Send = (props) =>{
   const { classes } = props;
+  const errEmpMes="入力されていません";
+  const errNumMes="半角数字のみ入力してください";
   return (
     <div>
       <form
@@ -48,31 +50,33 @@ const Send = (props) =>{
 				onSubmit={e=>{props.sendSubmit(e)}}
       >
         <div>
-          <TextField
+          <TextField　className={classes.textField}
+            label="送金金額"
             id="sendMoney"
             name="sendMoney"
-            helperText={props.errorMoneyText}
-            error={props.errorMoney}
-            label="送金金額"
-            className={classes.textField}
+            error={props.errorMoney||props.errorMoneyEmpty}
             onChange={e=>{props.handleChange(e)}}
+            InputLabelProps={{error: false}}
             value={props.sendMoney}
-            margin="normal"
+            helperText={props.errorEmptyMoney? errEmpMes : (props.errorMoney? errNumMes :"")}
           />
         </div>
+        {!(props.errorEmptyMoney||props.errorMoney)?<br/>:null}
+        <br/>
         <div>
-          <TextField
+          <TextField className={classes.textField}
+            label="送信先 学籍番号"
             id="studentNum"
             name="studentNum"
-            helperText={props.errorNumText}
-            error={props.errorNum}
-            label="送り先 学籍番号"
-            className={classes.textField}
+            error={props.errorNum||props.errorNumEmpty}
             onChange={e=>{props.handleChange(e)}}
+            InputLabelProps={{error: false}}
             value={props.studentNum}
-            margin="normal"
+            helperText={props.errorEmptyNum? errEmpMes : (props.errorNum? errNumMes :"")}
           />
         </div>
+        {!(props.errorEmptyNum||props.errorNum)?<br/>:null}
+        <br/>
         <div>
           <Button
             variant="contained"
