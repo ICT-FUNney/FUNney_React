@@ -43,7 +43,7 @@ class AppWeb extends Component {
     }
   }
   render() {
-      console.log(this.state)
+      console.log(this.props.login_flag)
       return(
         <div className={(this.state.sidebarOpen && ((this.state.link !== "/") && (this.state.link !== "/signup"))) ? "App" : "App_NoSidebar"}>
           {this.props.history.location.pathname !== '/' && this.props.history.location.pathname !== '/signup' ?
@@ -66,7 +66,7 @@ class AppWeb extends Component {
           }
           <Switch>
             <Route exact path="/"
-              render={props => <SignIn successLogin = {() => {this.props.changeLogin()}} />
+              render={props => <SignIn successLogin = {() => {this.props.changeLogin()}}/>
             }/>
             <Route exact path="/signup" component={SignUp} />
             <LoginCheck flag = {this.props.login_flag} >

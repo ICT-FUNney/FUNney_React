@@ -33,6 +33,7 @@ class App extends Component {
     })
     cookies.set('login_flag', !(this.state.login_flag));
     console.log(cookies.get('login_flag'))
+    console.log("aaaaaaaaaaaa")
   }
   componentDidMount(){
     this.loadCookies()
@@ -40,7 +41,7 @@ class App extends Component {
   render() {
     console.log(this.state.login_flag)
     return(
-      (window.innerWidth >= 1025) ? <BrowserRouter><AppWeb login_flag = {this.state.login_flag} changeLogin = {()=>{this.changeLogin()}}/></BrowserRouter>
+      (window.innerWidth >= 20) ? <BrowserRouter><AppWeb login_flag = {this.state.login_flag} changeLogin = {() => {this.changeLogin()}}/></BrowserRouter>
       : <BrowserRouter><AppMobile/></BrowserRouter>
     );
   }

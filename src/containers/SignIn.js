@@ -50,7 +50,7 @@ class SignIn extends Component {
         error:true,
       })
     } else {
-      this.props.successLogin();
+      this.props.successLogin()
       this.props.history.push('/home');
     }
   }
@@ -83,8 +83,8 @@ class SignIn extends Component {
         </div>
         <div className="SignInButton">
           <SignInButton clickTask={
-            e => {
-              this.changeLink(e)
+            () => {
+              this.changeLink()
             }
           }/>
         </div>
