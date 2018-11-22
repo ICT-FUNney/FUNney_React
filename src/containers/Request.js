@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import RequestInput from '../components/RequestInput.js';
-import RequestBotan from '../components/RequestBotan.js';
-import RequestBotanModal from '../components/RequestBotanModal.js';
+import RequestButton from '../components/RequestButton.js';
+import RequestButtonModal from '../components/RequestButtonModal.js';
 
 import '../App.css'
 
@@ -88,12 +88,12 @@ handleChange = (e, name) => {
           errorFlagDefaultValueNumber={this.state.errorFlagDefaultValueNumber}
         />
        </div>
-       <div className="RequestBotan">
-        <RequestBotan clickSendRequest = {()=>{this.clickSendRequest()}
+       <div className="RequestButton">
+        <RequestButton clickSendRequest = {()=>{this.clickSendRequest()}
       }/>
        </div>
-       <div className="RequestBotanModal">
-       <RequestBotanModal
+       <div className="RequestButtonModal">
+       <RequestButtonModal
         requestModal={this.state.requestModal}
         closeModal={this.state.closeModal}
         requestOk={()=>{this.requestOk()}}

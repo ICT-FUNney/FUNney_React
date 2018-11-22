@@ -37,7 +37,7 @@ const styles = (theme) => ({
 
 });
 
-const RequestBotanModal= (props)=>{
+const RequestButtonModal= (props)=>{
   const { classes } = props;
   return(
 
@@ -72,4 +72,4 @@ const RequestBotanModal= (props)=>{
 );}
 
 
-export default withStyles(styles)(RequestBotanModal);
+export default withStyles(styles)(RequestButtonModal);

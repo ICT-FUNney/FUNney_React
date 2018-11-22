@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 
 
 const styles = (theme) => ({
-  RequestBotan__root:{
+  RequestButton__root:{
     marginLeft: theme.spacing.unit,
     marginRight: "50px",
     width: 200,
@@ -12,12 +12,12 @@ const styles = (theme) => ({
 
 });
 
-const RequestBotan= (props)=>{
+const RequestButton= (props)=>{
   const { classes } = props;
   return(
-  <div className="RequestBotan">
+  <div className="RequestButton">
      <Button variant="contained" color="primary" classes={{
-       root: classes.RequestBotan__root,
+       root: classes.RequestButton__root,
      }}
      onClick = {e =>{props.clickSendRequest()}
 
@@ -29,4 +29,4 @@ const RequestBotan= (props)=>{
   </div>);
 }
 
-export default withStyles(styles)(RequestBotan);
+export default withStyles(styles)(RequestButton);
