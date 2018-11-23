@@ -38,8 +38,9 @@ const RequestInput = (props) => {
         <TextField
          id="standard-uncontrolled"
          error={props.errorFlagNameNumber || props.errorFlagName}
-         helperText ={(props.errorFlagName)? "error": (props.errorFlagNameNumber)? "error 半角数字のみ入力してください" : ""}
+         helperText ={(props.errorFlagName)? "入力されていません": (props.errorFlagNameNumber)? "半角数字のみ入力してください" : ""}
          label="要求金額"
+         InputLabelProps={{error: false}}
          defaultValue=""
          className={classes.textField}
          value={props.name}
@@ -51,9 +52,10 @@ const RequestInput = (props) => {
       <div>
         <TextField
           id="standard-name"
-          helperText ={(props.errorFlagDefaultValue)? "error":(props.errorFlagDefaultValueNumber) ? "error 半角数字のみ入力してください" : ""}
+          helperText ={(props.errorFlagDefaultValue)? "入力されていません":(props.errorFlagDefaultValueNumber) ? "半角数字のみ入力してください" : ""}
           error={props.errorFlagDefaultValueNumber || props.errorFlagDefaultValue}
           label="送り先学籍番号"
+          InputLabelProps={{error: false}}
           className={classes.textField}
           value={props.defaultValue}
           onChange={e=>{props.handleChange(e)}}
@@ -63,10 +65,11 @@ const RequestInput = (props) => {
         </div>
         <TextField
          id="standard-select-currency"
-         helperText ={(props.errorFlagRequestSelect)? "error": ""}
+         helperText ={(props.errorFlagRequestSelect)? "入力されていません": ""}
          error={props.errorFlagRequestSelect}
          select
          label="要求方法"
+         InputLabelProps={{error: false}}
          className={classes.textField}
          value={props.requestSelect}
          onChange={e=>{props.handleChange(e)}}
