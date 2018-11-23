@@ -6,17 +6,25 @@ import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
 
 const styles = theme => ({
-  textField: {
+  textFieldWeb: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
     width: 200,
   },
-  menu: {
-    width: 200,
+  textFieldApp: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    marginBottom: 100,
+    width: 500,
   },
-  submitButton: {
+  submitButtonWeb: {
     margin: theme.spacing.unit,
     width: 200,
+  },
+  submitButtonApp: {
+    margin: theme.spacing.unit,
+    marginLeft: theme.spacing.unit+125,
+    width: 250,
   },
   modalButton: {
     margin: theme.spacing.unit,
@@ -27,7 +35,17 @@ const styles = theme => ({
   input: {
     display: 'none',
   },
-  paper: {
+  paperWeb: {
+    position: 'absolute',
+    width: theme.spacing.unit * 50,
+    backgroundColor: theme.palette.background.paper,
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing.unit * 4,
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%,-50%)',
+  },
+  paperApp: {
     position: 'absolute',
     width: theme.spacing.unit * 50,
     backgroundColor: theme.palette.background.paper,
@@ -50,7 +68,7 @@ const Send = (props) =>{
 				onSubmit={e=>{props.sendSubmit(e)}}
       >
         <div>
-          <TextField　className={classes.textField}
+          <TextField　className={(window.innerWidth >= 765)?classes.textFieldWeb:classes.textFieldApp}
             label="送金金額"
             id="sendMoney"
             name="sendMoney"
@@ -64,8 +82,8 @@ const Send = (props) =>{
         {!(props.errorEmptyMoney||props.errorMoney)?<br/>:null}
         <br/>
         <div>
-          <TextField className={classes.textField}
-            label="送信先 学籍番号"
+          <TextField className={(window.innerWidth >= 765)?classes.textFieldWeb:classes.textFieldApp}
+            label="送り先 学籍番号"
             id="studentNum"
             name="studentNum"
             error={props.errorNum||props.errorNumEmpty}
@@ -81,7 +99,7 @@ const Send = (props) =>{
           <Button
             variant="contained"
             color="primary"
-            className={classes.submitButton}
+            className={(window.innerWidth >= 765)?classes.submitButtonWeb:classes.submitButtonApp}
             type="submit"
           >
             send
@@ -94,7 +112,7 @@ const Send = (props) =>{
         open={props.submitModal}
         onClose={props.closeModal}
       >
-        <div className={classes.paper}>
+        <div className={(window.innerWidth >= 765)?classes.paperWeb:classes.paperApp}>
           <Typography variant="h6" id="modal-title">
             確認
           </Typography>
