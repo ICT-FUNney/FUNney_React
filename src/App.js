@@ -27,19 +27,15 @@ class App extends Component {
   }
   async changeLogin(){
     const {cookies} = await this.props;
-    console.log(cookies.get('login_flag'))
     this.setState({
       login_flag: !(this.state.login_flag),
     })
     cookies.set('login_flag', !(this.state.login_flag));
-    console.log(cookies.get('login_flag'))
-    console.log("aaaaaaaaaaaa")
   }
   componentDidMount(){
     this.loadCookies()
   }
   render() {
-    console.log(this.state.login_flag)
     return(
       (window.innerWidth >= 20) ? <BrowserRouter><AppWeb login_flag = {this.state.login_flag} changeLogin = {() => {this.changeLogin()}}/></BrowserRouter>
       : <BrowserRouter><AppMobile/></BrowserRouter>
