@@ -6,6 +6,10 @@ import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
 
 const styles = theme => ({
+  sendForm: {
+    justifyContent: "center",
+    width: "80%",
+  },
   textFieldWeb: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
@@ -14,17 +18,17 @@ const styles = theme => ({
   textFieldApp: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    marginBottom: 100,
-    width: 500,
+    marginBottom: "20%",
+    width: "100%",
   },
   submitButtonWeb: {
     margin: theme.spacing.unit,
     width: 200,
   },
   submitButtonApp: {
-    margin: theme.spacing.unit,
-    marginLeft: theme.spacing.unit+125,
-    width: 250,
+    justifyContent: "center",
+    transform: 'translate(50%,-50%)',
+    width: "50%",
   },
   modalButton: {
     margin: theme.spacing.unit,
@@ -47,7 +51,7 @@ const styles = theme => ({
   },
   paperApp: {
     position: 'absolute',
-    width: theme.spacing.unit * 50,
+    width: "60%",
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing.unit * 4,
@@ -61,7 +65,7 @@ const Send = (props) =>{
   const errEmpMes="入力されていません";
   const errNumMes="半角数字のみ入力してください";
   return (
-    <div>
+    <div className={(window.innerWidth >= 765)?null:classes.sendForm}>
       <form
         noValidate
         autoComplete="off"
