@@ -6,17 +6,29 @@ import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
 
 const styles = theme => ({
-  textField: {
+  sendForm: {
+    justifyContent: "center",
+    width: "80%",
+  },
+  textFieldWeb: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
     width: 200,
   },
-  menu: {
-    width: 200,
+  textFieldApp: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    marginBottom: "20%",
+    width: "100%",
   },
-  submitButton: {
+  submitButtonWeb: {
     margin: theme.spacing.unit,
     width: 200,
+  },
+  submitButtonApp: {
+    justifyContent: "center",
+    transform: 'translate(50%,-50%)',
+    width: "50%",
   },
   modalButton: {
     margin: theme.spacing.unit,
@@ -27,9 +39,19 @@ const styles = theme => ({
   input: {
     display: 'none',
   },
-  paper: {
+  paperWeb: {
     position: 'absolute',
     width: theme.spacing.unit * 50,
+    backgroundColor: theme.palette.background.paper,
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing.unit * 4,
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%,-50%)',
+  },
+  paperApp: {
+    position: 'absolute',
+    width: "60%",
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing.unit * 4,
@@ -40,17 +62,18 @@ const styles = theme => ({
 });
 const Send = (props) =>{
   const { classes } = props;
-  const errEmpMes="入力されていません";
-  const errNumMes="半角数字のみ入力してください";
+  const ERR_EMPTY_MESSAGE="入力されていません";
+  const ERR_NUMBER_MESSAGE="半角数字のみ入力してください";
+  const IS_TABLET=(window.innerWidth <= 1024);
   return (
-    <div>
+    <div className={IS_TABLET?classes.sendForm:null}>
       <form
         noValidate
         autoComplete="off"
 				onSubmit={e=>{props.sendSubmit(e)}}
       >
         <div>
-          <TextField　className={classes.textField}
+          <TextField　className={IS_TABLET?classes.textFieldApp:classes.textFieldWeb}
             label="送金金額"
             id="sendMoney"
             name="sendMoney"
@@ -58,21 +81,21 @@ const Send = (props) =>{
             onChange={e=>{props.handleChange(e)}}
             InputLabelProps={{error: false}}
             value={props.sendMoney}
-            helperText={props.errorEmptyMoney? errEmpMes : (props.errorMoney? errNumMes :"")}
+            helperText={props.errorEmptyMoney? ERR_EMPTY_MESSAGE : (props.errorMoney? ERR_NUMBER_MESSAGE :"")}
           />
         </div>
         {!(props.errorEmptyMoney||props.errorMoney)?<br/>:null}
         <br/>
         <div>
-          <TextField className={classes.textField}
-            label="送信先 学籍番号"
+          <TextField className={IS_TABLET?classes.textFieldApp:classes.textFieldWeb}
+            label="送り先 学籍番号"
             id="studentNum"
             name="studentNum"
             error={props.errorNum||props.errorNumEmpty}
             onChange={e=>{props.handleChange(e)}}
             InputLabelProps={{error: false}}
             value={props.studentNum}
-            helperText={props.errorEmptyNum? errEmpMes : (props.errorNum? errNumMes :"")}
+            helperText={props.errorEmptyNum? ERR_EMPTY_MESSAGE : (props.errorNum? ERR_NUMBER_MESSAGE :"")}
           />
         </div>
         {!(props.errorEmptyNum||props.errorNum)?<br/>:null}
@@ -81,7 +104,7 @@ const Send = (props) =>{
           <Button
             variant="contained"
             color="primary"
-            className={classes.submitButton}
+            className={IS_TABLET?classes.submitButtonApp:classes.submitButtonWeb}
             type="submit"
           >
             send
@@ -94,7 +117,7 @@ const Send = (props) =>{
         open={props.submitModal}
         onClose={props.closeModal}
       >
-        <div className={classes.paper}>
+        <div className={IS_TABLET?classes.paperApp:classes.paperWeb}>
           <Typography variant="h6" id="modal-title">
             確認
           </Typography>
