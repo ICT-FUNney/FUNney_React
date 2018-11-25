@@ -64,15 +64,16 @@ const Send = (props) =>{
   const { classes } = props;
   const errEmpMes="入力されていません";
   const errNumMes="半角数字のみ入力してください";
+  const isTablet=(window.innerWidth <= 1024);
   return (
-    <div className={(window.innerWidth >= 765)?null:classes.sendForm}>
+    <div className={isTablet?classes.sendForm:null}>
       <form
         noValidate
         autoComplete="off"
 				onSubmit={e=>{props.sendSubmit(e)}}
       >
         <div>
-          <TextField　className={(window.innerWidth >= 765)?classes.textFieldWeb:classes.textFieldApp}
+          <TextField　className={isTablet?classes.textFieldApp:classes.textFieldWeb}
             label="送金金額"
             id="sendMoney"
             name="sendMoney"
@@ -86,7 +87,7 @@ const Send = (props) =>{
         {!(props.errorEmptyMoney||props.errorMoney)?<br/>:null}
         <br/>
         <div>
-          <TextField className={(window.innerWidth >= 765)?classes.textFieldWeb:classes.textFieldApp}
+          <TextField className={isTablet?classes.textFieldApp:classes.textFieldWeb}
             label="送り先 学籍番号"
             id="studentNum"
             name="studentNum"
@@ -103,7 +104,7 @@ const Send = (props) =>{
           <Button
             variant="contained"
             color="primary"
-            className={(window.innerWidth >= 765)?classes.submitButtonWeb:classes.submitButtonApp}
+            className={isTablet?classes.submitButtonApp:classes.submitButtonWeb}
             type="submit"
           >
             send
@@ -116,7 +117,7 @@ const Send = (props) =>{
         open={props.submitModal}
         onClose={props.closeModal}
       >
-        <div className={(window.innerWidth >= 765)?classes.paperWeb:classes.paperApp}>
+        <div className={isTablet?classes.paperApp:classes.paperWeb}>
           <Typography variant="h6" id="modal-title">
             確認
           </Typography>
