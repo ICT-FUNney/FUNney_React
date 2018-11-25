@@ -62,18 +62,18 @@ const styles = theme => ({
 });
 const Send = (props) =>{
   const { classes } = props;
-  const errEmpMes="入力されていません";
-  const errNumMes="半角数字のみ入力してください";
-  const isTablet=(window.innerWidth <= 1024);
+  const ERR_EMPTY_MESSAGE="入力されていません";
+  const ERR_NUMBER_MESSAGE="半角数字のみ入力してください";
+  const IS_TABLET=(window.innerWidth <= 1024);
   return (
-    <div className={isTablet?classes.sendForm:null}>
+    <div className={IS_TABLET?classes.sendForm:null}>
       <form
         noValidate
         autoComplete="off"
 				onSubmit={e=>{props.sendSubmit(e)}}
       >
         <div>
-          <TextField　className={isTablet?classes.textFieldApp:classes.textFieldWeb}
+          <TextField　className={IS_TABLET?classes.textFieldApp:classes.textFieldWeb}
             label="送金金額"
             id="sendMoney"
             name="sendMoney"
@@ -81,13 +81,13 @@ const Send = (props) =>{
             onChange={e=>{props.handleChange(e)}}
             InputLabelProps={{error: false}}
             value={props.sendMoney}
-            helperText={props.errorEmptyMoney? errEmpMes : (props.errorMoney? errNumMes :"")}
+            helperText={props.errorEmptyMoney? ERR_EMPTY_MESSAGE : (props.errorMoney? ERR_NUMBER_MESSAGE :"")}
           />
         </div>
         {!(props.errorEmptyMoney||props.errorMoney)?<br/>:null}
         <br/>
         <div>
-          <TextField className={isTablet?classes.textFieldApp:classes.textFieldWeb}
+          <TextField className={IS_TABLET?classes.textFieldApp:classes.textFieldWeb}
             label="送り先 学籍番号"
             id="studentNum"
             name="studentNum"
@@ -95,7 +95,7 @@ const Send = (props) =>{
             onChange={e=>{props.handleChange(e)}}
             InputLabelProps={{error: false}}
             value={props.studentNum}
-            helperText={props.errorEmptyNum? errEmpMes : (props.errorNum? errNumMes :"")}
+            helperText={props.errorEmptyNum? ERR_EMPTY_MESSAGE : (props.errorNum? ERR_NUMBER_MESSAGE :"")}
           />
         </div>
         {!(props.errorEmptyNum||props.errorNum)?<br/>:null}
@@ -104,7 +104,7 @@ const Send = (props) =>{
           <Button
             variant="contained"
             color="primary"
-            className={isTablet?classes.submitButtonApp:classes.submitButtonWeb}
+            className={IS_TABLET?classes.submitButtonApp:classes.submitButtonWeb}
             type="submit"
           >
             send
@@ -117,7 +117,7 @@ const Send = (props) =>{
         open={props.submitModal}
         onClose={props.closeModal}
       >
-        <div className={isTablet?classes.paperApp:classes.paperWeb}>
+        <div className={IS_TABLET?classes.paperApp:classes.paperWeb}>
           <Typography variant="h6" id="modal-title">
             確認
           </Typography>
