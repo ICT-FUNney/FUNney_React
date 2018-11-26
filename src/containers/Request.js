@@ -75,7 +75,7 @@ handleChange = (e, name) => {
     console.log(this.state)
     return (
       <div className="Request">
-       <div>
+       <div className="RequestBrock">
         <div className="RequestInput">
         <RequestInput handleChange = {(e)=>{this.handleChange(e,e.target.name)}}
           defaultValue={this.state.defaultValue}
