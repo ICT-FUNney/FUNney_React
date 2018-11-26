@@ -6,8 +6,11 @@ import Button from '@material-ui/core/Button';
 const styles = (theme) => ({
   RequestButton__root:{
     marginLeft: theme.spacing.unit,
-    marginRight: "50px",
-    width: 200,
+
+    width: "40vw",
+    [theme.breakpoints.down('md')]:{
+      width : "50vw",
+    }
   },
 
 });
