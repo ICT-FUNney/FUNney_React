@@ -7,7 +7,7 @@ const styles = theme => ({
 
   textField: {
     marginLeft: theme.spacing.unit,
-    width: "40vw",
+    width: "20vw",
     [theme.breakpoints.down('md')]:{
       width : "50vw",
     },
