@@ -63,12 +63,10 @@ class SignUp extends Component {
     return(
       <div className="SignUpBackground">
         <div className="SignUp">
-          <div className="SignUpFUNneyLogo1">
-            <img src={FUNneyLogo} className="SignUpFUNneyLogo2" alt="logo"/>
+          <div className="SignUpFUNneyLogoPosition">
+            <img src={FUNneyLogo} className="SignUpFUNneyLogo" alt="logo"/>
           </div>
-          <div>
-            <b className="SignUpFUNney">FUNney</b>
-          </div>
+          <b className="SignUpFUNney">FUNney</b>
           <div className="SignUpForm">
             <SignUpForm
               studentid={this.state.studentId}
