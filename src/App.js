@@ -37,8 +37,8 @@ class App extends Component {
   }
   render() {
     return(
-      (window.innerWidth >= 20) ? <BrowserRouter><AppWeb login_flag = {this.state.login_flag} changeLogin = {() => {this.changeLogin()}}/></BrowserRouter>
-      : <BrowserRouter><AppMobile/></BrowserRouter>
+      (window.innerWidth >= 1025) ? <BrowserRouter><AppWeb login_flag = {this.state.login_flag} changeLogin = {() => {this.changeLogin()}}/></BrowserRouter>
+      : <BrowserRouter><AppMobile login_flag = {this.state.login_flag} changeLogin = {() => {this.changeLogin()}}/></BrowserRouter>
     );
   }
 }
