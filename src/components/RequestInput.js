@@ -36,7 +36,7 @@ const RequestInput = (props) => {
     const { classes } = props;
     return (
       <form className={classes.container} noValidate autoComplete="off">
-　　　　 <div>
+　　　　 <div classname="RequestCost">
         <TextField
          id="standard-uncontrolled"
          error={props.errorFlagNameNumber || props.errorFlagName}
@@ -51,7 +51,7 @@ const RequestInput = (props) => {
          name="name"
         />
       </div>
-      <div>
+      <div classname="RequestStudentNumber">
         <TextField
           id="standard-name"
           helperText ={(props.errorFlagDefaultValue)? "入力されていません":(props.errorFlagDefaultValueNumber) ? "半角数字のみ入力してください" : ""}
@@ -65,6 +65,7 @@ const RequestInput = (props) => {
           name="defaultValue"
         />
         </div>
+        <div classname="RequestMethod">
         <TextField
          id="standard-select-currency"
          helperText ={(props.errorFlagRequestSelect)? "入力されていません": ""}
@@ -90,6 +91,7 @@ const RequestInput = (props) => {
            </MenuItem>
          ))}
        </TextField>
+       </div>
       </form>
     );
   }

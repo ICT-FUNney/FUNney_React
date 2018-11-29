@@ -42,8 +42,16 @@
   align-items: center;
 }
 
-.RequestButton{
+.RequestStudentNumber{
   margin-top: 2vh;
+}
+
+.RequestMethod{
+  margin-top: 2vh;
+}
+
+.RequestButton{
+  margin-top: 4vh;
 }
 
 .Setting{
