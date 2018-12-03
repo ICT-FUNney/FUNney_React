@@ -6,10 +6,12 @@ import Button from '@material-ui/core/Button';
 const styles = (theme) => ({
   RequestButton__root:{
     marginLeft: theme.spacing.unit,
-    width: "20vw",
-    [theme.breakpoints.down('md')]:{
-      width : "50vw",
-    }
+<<<<<<< HEAD:src/components/RequestButton.js
+    marginRight: "50px",
+    width: 200,
+=======
+    width : 200,
+>>>>>>> 携帯版の要求画面を作成:src/components/RequestButton.js
   },
 
 });

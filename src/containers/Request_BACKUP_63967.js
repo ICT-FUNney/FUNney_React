@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import RequestInput from '../components/RequestInput.js';
 import RequestButton from '../components/RequestButton.js';
+<<<<<<< HEAD
 import RequestButtonModal from '../components/RequestButtonModal.js';
 
+=======
+>>>>>>> 携帯版の要求画面を作成
 import '../App.css'
 
 class Request extends Component {

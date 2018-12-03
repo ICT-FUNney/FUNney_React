@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import RequestInput from '../components/RequestInput.js';
 import RequestButton from '../components/RequestButton.js';
-import RequestButtonModal from '../components/RequestButtonModal.js';
-
 import '../App.css'
 
 class Request extends Component {
@@ -10,38 +8,16 @@ class Request extends Component {
     super(props);
     this.state= {
       name: "",
-      defaultValue: "",
-      requestSelect: "noselect",
+      defaultValue:"",
+      requestSelect:"noselect",
       errorFlagName: false,
-      erroFlagDefaultValue: false,
-      errorFlagRequestSelect: false,
-      errorFlagNameNumber: false,
-      errorFlagDefaultValueNumber: false,
-      requestModal: false,
+      erroFlagDefaultValue:false,
+      errorFlagRequestSelect:false,
+      errorFlagNameNumber:false,
+      errorFlagDefaultValueNumber:false,
+
     }
   }
-
-  requestOk(){
-    this.setState({
-      requestModal: false,
-      name: "",
-      defaultValue: "",
-      requestSelect:"noselect",
-    })
-    this.props.history.push('/request');
-  }
-
-  requestCancel(){
-    this.setState({
-      requestModal: false,
-    })
-  }
-
-  closeModal(){
-    this.setState({
-      requestModal: false,
-    });
-  };
 
 clickSendRequest(){
      const checkNumber = new RegExp(/^[0-9]+$/)
@@ -56,20 +32,15 @@ clickSendRequest(){
     if(this.state.name !== "" && this.state.defaultValue !== "" &&
       this.state.requestSelect !== "noselect" && checkNumber.test(this.state.name)
     && checkNumber.test(this.state.defaultValue)){
-       this.setState({
-         requestModal: true,
-       })
+      this.props.history.push('/home');
       }
     }
-
 
 handleChange = (e, name) => {
   this.setState({
     [name]: e.target.value,
   });
 };
-
-
 
   render() {
     console.log(this.state)
@@ -91,16 +62,6 @@ handleChange = (e, name) => {
        <div className="RequestButton">
         <RequestButton clickSendRequest = {()=>{this.clickSendRequest()}
       }/>
-       </div>
-       <div className="RequestButtonModal">
-       <RequestButtonModal
-        requestModal={this.state.requestModal}
-        closeModal={this.state.closeModal}
-        requestOk={()=>{this.requestOk()}}
-        requestCancel={()=>{this.requestCancel()}}
-        name={this.state.name}
-        defaultValue={this.state.defaultValue}
-        />
        </div>
       </div>
       </div>
