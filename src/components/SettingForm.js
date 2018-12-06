@@ -10,14 +10,18 @@ import { withStyles } from '@material-ui/core/styles';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import BluetoothIcon from '@material-ui/icons/Bluetooth';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+
+import '../SettingForm.css';
 
 const styles = theme => ({
   root: {
     width: '100%',
     maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
+    margin:10,
   },
   nested: {
     paddingLeft: theme.spacing.unit * 4,
@@ -26,34 +30,41 @@ const styles = theme => ({
 
 const SettingForm=(props)=>{
   const { classes } = props;
+
   return(
-         <List
-           component="nav"
-           subheader={
-             <ListSubheader component="div">Account</ListSubheader>
-           }
-           className={classes.root}
-         >
-           <ListItem button>
-             <ListItemIcon>
-               <BluetoothIcon />
-             </ListItemIcon>
-             <ListItemText inset primary="個人情報" />
-           </ListItem>
-           <ListItem button>
-             <ListItemIcon>
-               <DraftsIcon />
-             </ListItemIcon>
-             <ListItemText inset primary="なんか" />
-           </ListItem>
-           <ListItem button>
-             <ListItemIcon>
-               <DraftsIcon />
-             </ListItemIcon>
-             <ListItemText inset primary="なんか" />
-           </ListItem>
-         </List>
-       );
+    <List
+      component="nav"
+      subheader={
+        <ListSubheader component="div">Account</ListSubheader>
+      }
+      className={classes.root}
+      >
+      <ListItem button>
+        <ListItemIcon>
+          <AccountCircleIcon />
+        </ListItemIcon>
+        <ListItemText inset primary="個人情報" />
+      </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <BluetoothIcon />
+        </ListItemIcon>
+        <ListItemText inset primary="なんか" />
+      </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <MoreHorizIcon />
+        </ListItemIcon>
+        <ListItemText inset primary="なんか" />
+      </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <MoreHorizIcon />
+        </ListItemIcon>
+        <ListItemText inset primary="more" />
+      </ListItem>
+    </List>
+  );
 }
 SettingForm.propTypes = {
   classes: PropTypes.object.isRequired,
