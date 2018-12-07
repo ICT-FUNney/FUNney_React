@@ -1,0 +1,28 @@
+.accountInformation {
+  margin-top: -55vh;
+}
+
+.showInformation {
+  display: flex;
+}
+
+.accountIcon {
+  width: 2.5em;
+  height: 2.5em;
+  justify-content: center;
+}
+
+.space1 {
+  width: 10px;
+}
+
+.user {
+
+}
+
+.space2 {
+  width: 50px;
+}
+
+.property {
+}
