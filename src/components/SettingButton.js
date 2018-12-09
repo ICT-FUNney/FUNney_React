@@ -11,28 +11,38 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import UnarchiveIcon from '@material-ui/icons/Unarchive';
 
+import '../SettingButton.css'
+
+const styles = theme => ({
+  root: {
+    width: '100%',
+    maxWidth: 340,
+    backgroundColor: theme.palette.background.paper,
+    margin:20,
+  },
+  nested: {
+    paddingLeft: theme.spacing.unit * 2,
+  },
+});
+
 const SettingButton=(props)=>{
   const { classes } = props;
-  const styles = theme => ({
-    root: {
-      width: '100%',
-      maxWidth: 360,
-      backgroundColor: theme.palette.background.paper,
-      margin:10,
-    },
-    nested: {
-      paddingLeft: theme.spacing.unit * 4,
-    },
-  });
-
   return(
-    <ListItem button>
-    <ListItemIcon>
-    <UnarchiveIcon/>
-    </ListItemIcon>
-    <ListItemText inset primary="Sign out" />
-
-    </ListItem>
+    <div className="SignoutButton">
+      <ListItem button
+        onClick = {
+          e => {
+            props.clickTask()
+          }
+        }
+        className={classes.root}
+        >
+        <ListItemIcon>
+          <UnarchiveIcon/>
+        </ListItemIcon>
+        <ListItemText inset primary="Sign out" />
+      </ListItem>
+    </div>
   )
 }
 
@@ -40,4 +50,4 @@ SettingButton.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default (SettingButton);
+export default withStyles(styles)(SettingButton);

@@ -13,15 +13,15 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import BluetoothIcon from '@material-ui/icons/Bluetooth';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import Divider from '@material-ui/core/Divider';
 
-import '../SettingForm.css';
 
 const styles = theme => ({
   root: {
     width: '100%',
-    maxWidth: 360,
+    maxWidth: 310,
     backgroundColor: theme.palette.background.paper,
-    margin:10,
+    margin:30,
   },
   nested: {
     paddingLeft: theme.spacing.unit * 4,
@@ -39,33 +39,39 @@ const SettingForm=(props)=>{
       }
       className={classes.root}
       >
+      <Divider />
       <ListItem button>
-        <ListItemIcon>
-          <AccountCircleIcon />
+        <ListItemIcon >
+          <AccountCircleIcon/>
         </ListItemIcon>
-        <ListItemText inset primary="個人情報" />
+        <ListItemText inset primary="個人情報"/>
       </ListItem>
+      <Divider />
       <ListItem button>
         <ListItemIcon>
           <BluetoothIcon />
         </ListItemIcon>
-        <ListItemText inset primary="なんか" />
+        <ListItemText inset primary="none" />
       </ListItem>
+      <Divider />
       <ListItem button>
         <ListItemIcon>
           <MoreHorizIcon />
         </ListItemIcon>
-        <ListItemText inset primary="なんか" />
+        <ListItemText inset primary="none" />
       </ListItem>
+      <Divider />
       <ListItem button>
         <ListItemIcon>
           <MoreHorizIcon />
         </ListItemIcon>
         <ListItemText inset primary="more" />
       </ListItem>
+      <Divider />
     </List>
   );
 }
+
 SettingForm.propTypes = {
   classes: PropTypes.object.isRequired,
 };
