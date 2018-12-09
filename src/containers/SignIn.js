@@ -50,8 +50,7 @@ class SignIn extends Component {
         error:true,
       })
     } else {
-      this.props.successLogin()
-      this.props.history.push('/home');
+      this.props.successLogin(this.state);
     }
   }
   render() {
