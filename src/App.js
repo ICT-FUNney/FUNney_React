@@ -26,70 +26,89 @@ class App extends Component {
       link: nextProps.history.location.pathname
     };
   }
-  async loadDatas(){
+
+  async loadStatus(id = this.state.login_flag){
     try{
-        const {cookies} = await this.props;
-        let id = await cookies.get('login_flag')
-        if(id){
-          let data = await fetch("http://35.221.98.173:80/api/v1/balance",{
-            method: 'POST',
-            mode: "cors",
-            headers: {
-              'content-type': 'application/json'
-            },
-            body: JSON.stringify({id: id})
-          }).then(response => response.json());
-          this.setState({
-              login_flag: true,
-              user_data: data
-          });
-          if(this.props.history.location.pathname === '/' || this.props.history.location.pathname === '/signup'){
-            this.props.history.push('/home');
-          }
-        }
-        else{
-          if(!(this.props.history.location.pathname === '/' || this.props.history.location.pathname === '/signup')){
-            this.props.history.push('/');
-          }
-        }
-        this.setState({
-          load: true,
-        });
-    }
-    catch(e){
-     console.log("dataエラー")
-     console.log(e)
-   }
-  }
-  async successLogin(s){
-    try{
-      console.log(s.studentId)
-      this.setState({
-        load: false,
-      });
-      const {cookies} = await this.props;
       let data = await fetch("http://35.221.98.173:80/api/v1/balance",{
         method: 'POST',
         mode: "cors",
         headers: {
           'content-type': 'application/json'
         },
-        body: JSON.stringify({id: s.studentId, password: s.password})
+        body: JSON.stringify({id: id})
       }).then(response => response.json());
-      console.log(data)
       this.setState({
-        login_flag: data.id,
-        user_data: data
-      })
-      await cookies.set('login_flag', data.id);
-      console.log(this.state)
-      this.props.history.push('/home');
+          user_data: data
+      });
+    }
+    catch(e){
+      console.log("dataエラー");
+      console.log(e);
+    }
+  }
+
+  async loadDatas(){
+    try{
+      this.setState({
+        load: false,
+      });
+      const {cookies} = await this.props;
+      let id = await cookies.get('login_flag')
+      if(id !== ''){
+        await this.loadStatus(id);
+        this.setState({
+            login_flag: id,
+        });
+        if(this.props.history.location.pathname === '/' || this.props.history.location.pathname === '/signup'){
+          this.props.history.push('/home');
+        }
+      }
+      else{
+        if(!(this.props.history.location.pathname === '/' || this.props.history.location.pathname === '/signup')){
+          this.props.history.push('/');
+        }
+      }
       this.setState({
         load: true,
       });
     }
     catch(e){
-     console.log("dataエラー")
+      console.log("dataエラー")
+      console.log(e);
+   }
+  }
+  async successLogin(s){
+    try{
+      console.log(s.studentId, s.password)
+      this.setState({
+        load: false,
+      });
+      const {cookies} = await this.props;
+      let check_login = await fetch("http://35.221.98.173:80/api/v1/signin",{
+        method: 'POST',
+        mode: "cors",
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify({id: s.studentId, password: s.password})
+      });
+      if(check_login.status === 202){
+        await cookies.set('login_flag', s.studentId);
+        await this.loadStatus(s.studentId);
+        this.setState({
+          login_flag: s.studentId,
+        });
+        this.props.history.push('/home');
+      }
+      else{
+        console.log('ログイン失敗')
+      }
+      this.setState({
+        load: true,
+      });
+    }
+    catch(e){
+     console.log("通信エラー")
      console.log(e)
     }
   }
@@ -142,6 +161,7 @@ class App extends Component {
        },
        body: JSON.stringify({id: this.state.user_data.id, send_id: s.studentNum, balance: Number(s.sendMoney)})
      });
+     await this.loadStatus();
      this.setState({
        load: true,
      });
