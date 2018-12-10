@@ -11,7 +11,7 @@ class AppSend extends Component {
 		errorEmptyNum: false,
 		errorEmptyMoney: false,
 	};
-	
+
 	handleChange =e=> {
     this.setState({
       [e.target.name]: e.target.value,
@@ -51,6 +51,7 @@ class AppSend extends Component {
 	};
 
 	sendDetermine=()=>{
+		this.props.sendMoney(this.state);
 		this.setState({
 			sendMoney: '',
 			studentNum: '',

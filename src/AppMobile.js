@@ -13,6 +13,8 @@ import Request from './containers/Request.js';
 import Setting from './containers/Setting.js';
 import Signout from './containers/Signout.js';
 
+import LoginCheck from './LoginCheck.js';
+
 class AppMobile extends Component {
   constructor(props) {
     super(props);
@@ -26,6 +28,11 @@ class AppMobile extends Component {
       link: nextProps.history.location.pathname
     };
   }
+  componentDidUpdate(){
+    if(this.props.login_flag == true && this.props.history.location.pathname === '/' || this.props.history.location.pathname === '/signup'){
+      this.props.history.push('/home');
+    }
+  }
   render() {
     return(
       <div>
@@ -37,13 +44,19 @@ class AppMobile extends Component {
         : null
       }
       <Switch>
-        <Route exact path="/" component={SignIn} />
+        <Route exact path="/"
+          render={props => <SignIn successLogin = {() => {this.props.changeLogin()}}/>
+        }/>
         <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/home" component={Home} />
-        <Route exact path="/send" component={AppSend} />
-        <Route exact path="/request" component={Request} />
-        <Route exact path="/setting" component={Setting} />
-        <Route exact path="/signout" component={Signout} />
+        <LoginCheck flag = {this.props.login_flag} >
+          <Switch>
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/send" component={AppSend} />
+            <Route exact path="/request" component={Request} />
+            <Route exact path="/setting" component={Setting} />
+            <Route exact path="/signout" component={Signout} />
+          </Switch>
+        </LoginCheck>
       </Switch>
       </div>
     );

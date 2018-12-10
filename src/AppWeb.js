@@ -14,25 +14,21 @@ import Request from './containers/Request.js';
 import Setting from './containers/Setting.js';
 import Signout from './containers/Signout.js';
 
+import LoginCheck from './LoginCheck.js';
+
+
 class AppWeb extends Component {
   constructor(props) {
     super(props);
+    console.log(this.props.login_flag)
     this.state = {
       sidebarOpen: true,
-      link: this.props.history.location.pathname
     }
   }
-  static getDerivedStateFromProps(nextProps: Props, prevState: State) {
-      console.log(nextProps.history.location.pathname)
-      return {
-        sidebarOpen: prevState.sidebarOpen,
-        link: nextProps.history.location.pathname
-      };
-  }
   render() {
-      console.log(this.state)
+      console.log(this.props.link)
       return(
-        <div className={(this.state.sidebarOpen && ((this.state.link !== "/") && (this.state.link !== "/signup"))) ? "App" : "App_NoSidebar"}>
+        <div className={(this.state.sidebarOpen && ((this.props.link !== "/") && (this.props.link !== "/signup"))) ? "App" : "App_NoSidebar"}>
           {this.props.history.location.pathname !== '/' && this.props.history.location.pathname !== '/signup' ?
             <div>
               <AppMenubar sidebarOpen = {() => {
@@ -46,19 +42,35 @@ class AppWeb extends Component {
                     sidebarOpen: false,
                  })
                 }}
-                link = {this.state.link}
+                link = {this.props.link}
               />
             </div>
             : null
           }
           <Switch>
-            <Route exact path="/" component={SignIn} />
-            <Route exact path="/signup" component={SignUp} />
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/send" component={AppSend} />
-            <Route exact path="/request" component={Request} />
-            <Route exact path="/setting" component={Setting} />
-            <Route exact path="/signout" component={Signout} />
+            <Route exact path="/"
+              render={props =>
+                <SignIn
+                 successLogin = {s => {this.props.successLogin(s)}} />
+              }/>
+            <Route exact path="/signup"
+              render={props =>
+                <SignUp
+                 signUp = {s => {this.props.signUp(s)}} />
+               }/>
+            <Switch>
+                <Route exact path="/home" component={Home} />
+                <Route exact path="/send"
+                  render={props =>
+                    <AppSend
+                      sendMoney = {s => {this.props.sendMoney(s)}} />
+                   }/>
+                <Route exact path="/request" component={Request} />
+                <Route exact path="/setting" component={Setting} />
+                <Route exact path="/signout"
+                  render={props => <Signout outLogin = {() => {this.props.outLogin()}}/>
+                }/>
+            </Switch>
           </Switch>
         </div>
       );

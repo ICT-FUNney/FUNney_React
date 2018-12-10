@@ -55,7 +55,7 @@ class SignUp extends Component {
         error:true,
       })
     } else {
-      this.props.history.push('/home');
+      this.props.signUp(this.state);
     }
   }
   render(){
