@@ -10,7 +10,7 @@ class AppSend extends Component {
 		submitModal: false,
 		errorEmptyNum: false,
 		errorEmptyMoney: false,
-		Propety: 100,
+		Propety: 253,
 	};
 	
 	handleChange =e=> {
@@ -61,6 +61,7 @@ class AppSend extends Component {
 			errorEmptyNum: false,
 			submitModal: false,
 		});
+		alert('送金できました！');
 	};
 	render(){
 		return (
@@ -75,11 +76,11 @@ class AppSend extends Component {
 					submitModal={this.state.submitModal}
 					closeModal={this.closeModal}
 					sendDetermine={this.sendDetermine}
-          handleChange={(e)=>{this.handleChange(e)}}
-          sendMoney={this.state.sendMoney}
-          studentNum={this.state.studentNum}
-        />
-      </div>
+					handleChange={(e)=>{this.handleChange(e)}}
+					sendMoney={this.state.sendMoney}
+					studentNum={this.state.studentNum}
+        		/>
+      		</div>
 		);
 	}
 }

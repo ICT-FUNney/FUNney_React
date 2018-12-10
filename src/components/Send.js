@@ -22,10 +22,12 @@ const styles = theme => ({
     width: "100%",
   },
   submitButtonWeb: {
+    background: "#FF8C00",
     margin: theme.spacing.unit,
     width: 200,
   },
   submitButtonApp: {
+    background: "#FF8C00",
     justifyContent: "center",
     transform: 'translate(50%,-50%)',
     width: "50%",
@@ -63,13 +65,15 @@ const styles = theme => ({
     width: 200,
     fontWeight: 'normal',
     justifyContent: "center",
-    marginLeft: theme.spacing.unit*2,
+    marginBottom: theme.spacing.unit*2,
+    marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
   },
   Big:{
-    fontSize: '40px',
+    fontSize: '30px',
   },
 });
+
 const Send = (props) =>{
   const { classes } = props;
   const ERR_EMPTY_MESSAGE="入力されていません";
@@ -83,8 +87,8 @@ const Send = (props) =>{
 				onSubmit={e=>{props.sendSubmit(e)}}
       >
         <div>
-        {!(IS_TABLET)?<Typography variant="h6"className={classes.property}>
-            総資産<span className={classes.Big}> {props.Propety}</span> FNY
+        {!(IS_TABLET)?<Typography variant="h6" className={classes.property}>
+          総資産 <span className={classes.Big}>{props.Propety}</span> FNY
           </Typography>:null} 
           <TextField　className={IS_TABLET?classes.textFieldApp:classes.textFieldWeb}
             label="送金金額"
