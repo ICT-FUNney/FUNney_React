@@ -37,6 +37,7 @@ class App extends Component {
         },
         body: JSON.stringify({id: id})
       }).then(response => response.json());
+      console.log(data);
       this.setState({
           user_data: data
       });
