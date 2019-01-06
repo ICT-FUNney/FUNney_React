@@ -7,6 +7,7 @@ import * as actions from '../actions/ActionCreators.js';
 import HomeUserAndProperty from '../components/HomeUserAndProperty.js';
 
 import Chart from '../components/Chart.js';
+import '../Home.css';
 
 class Home extends Component {
   constructor(props){
@@ -18,14 +19,18 @@ class Home extends Component {
   }
 
   render() {
-    console.log(this.props.test)
+    //console.log(this.props.test)
     return (
       <div className="Home">
-        <HomeUserAndProperty
-          userID={this.state.user}
-          userProperty={this.state.property}
-        />
-        <Chart />
+        <div className="UserProperty">
+          <HomeUserAndProperty
+            userID={this.state.user}
+            userProperty={this.state.property}
+          />
+        </div>
+        <div className="graph">
+          <Chart />
+        </div>
       </div>
     );
   }
