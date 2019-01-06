@@ -22,8 +22,17 @@ class App extends Component {
     }
   }
   static getDerivedStateFromProps(nextProps: Props, prevState: State) {
+    let new_link = "/"
+    if(prevState.login_flag !== "" && prevState.login_flag !== undefined){
+      new_link = nextProps.history.location.pathname
+    }
+    else{
+      if(nextProps.history.location.pathname !== "/"){
+        nextProps.history.push('/');
+      }
+    }
     return {
-      link: nextProps.history.location.pathname
+      link: new_link
     };
   }
 
@@ -48,6 +57,12 @@ class App extends Component {
     }
   }
 
+  updateStatus(after){
+    this.setState({
+        user_data: after,
+    });
+  }
+
   async loadDatas(){
     try{
       this.setState({
@@ -55,7 +70,8 @@ class App extends Component {
       });
       const {cookies} = await this.props;
       let id = await cookies.get('login_flag')
-      if(id !== ''){
+      console.log(id)
+      if(id !== '' && id !== undefined){
         await this.loadStatus(id);
         this.setState({
             login_flag: id,
@@ -154,6 +170,7 @@ class App extends Component {
      this.setState({
        load: false,
      });
+     console.log(this.state.user_data.id, s.studentNum, Number(s.sendMoney));
      let data = await fetch("http://35.221.98.173:80/api/v1/transaction",{
        method: 'POST',
        mode: "cors",
@@ -162,7 +179,8 @@ class App extends Component {
        },
        body: JSON.stringify({id: this.state.user_data.id, send_id: s.studentNum, balance: Number(s.sendMoney)})
      });
-     await this.loadStatus();
+     let new_status = Object.assign({}, this.state.user_data, {balance: this.state.user_data.balance - Number(s.sendMoney)})
+     this.updateStatus(new_status)
      this.setState({
        load: true,
      });
@@ -178,18 +196,28 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state)
+    console.log(this.state.user_data)
+    console.log(this.state.link)
     return(
       (this.state.load === false) ? null:
-      (window.innerWidth >= 1) ?
+      (window.innerWidth >= 1025) ?
       <AppWeb
+        data = {this.state.user_data}
         link = {this.state.link}
         login_flag = {this.state.login_flag}
         successLogin = {s => {this.successLogin(s)}}
         outLogin = {() => {this.outLogin()}}
         signUp = {s => {this.signUp(s)}}
         sendMoney = {s => {this.sendMoney(s)}} /> :
-      <AppMobile login_flag = {this.state.login_flag} changeLogin = {() => {this.changeLogin()}}/>
+      <AppMobile
+        data = {this.state.user_data}
+        link = {this.state.link}
+        login_flag = {this.state.login_flag}
+        successLogin = {s => {this.successLogin(s)}}
+        outLogin = {() => {this.outLogin()}}
+        signUp = {s => {this.signUp(s)}}
+        sendMoney = {s => {this.sendMoney(s)}}
+      />
     );
   }
 }

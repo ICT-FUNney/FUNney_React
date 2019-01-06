@@ -26,6 +26,7 @@ class AppWeb extends Component {
     }
   }
   render() {
+      console.log(this.props.data)
       console.log(this.props.link)
       return(
         <div className={(this.state.sidebarOpen && ((this.props.link !== "/") && (this.props.link !== "/signup"))) ? "App" : "App_NoSidebar"}>
@@ -59,7 +60,11 @@ class AppWeb extends Component {
                  signUp = {s => {this.props.signUp(s)}} />
                }/>
             <Switch>
-                <Route exact path="/home" component={Home} />
+                <Route exact path="/home"
+                  render={props =>
+                    <Home
+                      data = {this.props.data} />
+                   }/>
                 <Route exact path="/send"
                   render={props =>
                     <AppSend
