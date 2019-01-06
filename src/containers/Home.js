@@ -6,6 +6,8 @@ import * as actions from '../actions/ActionCreators.js';
 //import SendAndRequestButton from '../components/SendAndRequestButton.js';
 import HomeUserAndProperty from '../components/HomeUserAndProperty.js';
 
+import Chart from '../components/Chart.js';
+
 class Home extends Component {
   constructor(props){
     super(props);
@@ -23,6 +25,7 @@ class Home extends Component {
           userID={this.state.user}
           userProperty={this.state.property}
         />
+        <Chart />
       </div>
     );
   }
