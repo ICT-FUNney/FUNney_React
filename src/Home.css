@@ -1,5 +1,4 @@
 .accountInformation {
-  margin-top: -55vh;
 }
 
 .showInformation {
@@ -25,4 +24,18 @@
 }
 
 .property {
+}
+
+.UserProperty {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.graph {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
