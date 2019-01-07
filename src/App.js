@@ -38,7 +38,7 @@ class App extends Component {
 
   async loadStatus(id = this.state.login_flag){
     try{
-      let data = await fetch("http://35.221.98.173:80/api/v1/balance",{
+      let data = await fetch("https://funfintech.tk/api/v1/balance",{
         method: 'POST',
         mode: "cors",
         headers: {
@@ -101,7 +101,7 @@ class App extends Component {
         load: false,
       });
       const {cookies} = await this.props;
-      let check_login = await fetch("http://35.221.98.173:80/api/v1/signin",{
+      let check_login = await fetch("https://funfintech.tk/api/v1/signin",{
         method: 'POST',
         mode: "cors",
         headers: {
@@ -145,7 +145,7 @@ class App extends Component {
         load: false,
       });
       console.log(s)
-      let data = await fetch("http://35.221.98.173:80/api/v1/signup",{
+      let data = await fetch("https://funfintech.tk/api/v1/signup",{
         method: 'POST',
         mode: "cors",
         headers: {
@@ -171,7 +171,7 @@ class App extends Component {
        load: false,
      });
      console.log(this.state.user_data.id, s.studentNum, Number(s.sendMoney));
-     let data = await fetch("http://35.221.98.173:80/api/v1/transaction",{
+     let data = await fetch("https://funfintech.tk/api/v1/transaction",{
        method: 'POST',
        mode: "cors",
        headers: {
