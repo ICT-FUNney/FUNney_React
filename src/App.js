@@ -26,6 +26,11 @@ class App extends Component {
     if(prevState.login_flag !== "" && prevState.login_flag !== undefined){
       new_link = nextProps.history.location.pathname
     }
+    else if (nextProps.history.location.pathname === "/signup") {
+      return {
+        link: "/signup"
+      };
+    }
     else{
       if(nextProps.history.location.pathname !== "/"){
         nextProps.history.push('/');
