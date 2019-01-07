@@ -20,8 +20,8 @@ class Home extends Component {
     return (
       <div className="Home">
         <HomeUserAndProperty
-          userID={this.state.user}
-          userProperty={this.state.property}
+          userID={this.props.data.id}
+          userProperty={this.props.data.balance}
         />
       </div>
     );
