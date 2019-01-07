@@ -1,4 +1,11 @@
 .SignoutButton{
+  width:100vw;
   position: fixed;
   bottom:10px;
+}
+
+.SettingForm{
+  width:80vw;
+  position: fixed;
+  margin-top: 30px
 }

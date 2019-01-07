@@ -16,7 +16,7 @@ import '../SettingButton.css'
 const styles = theme => ({
   root: {
     width: '100%',
-    maxWidth: 340,
+    maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
     margin:20,
   },

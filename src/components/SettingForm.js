@@ -15,11 +15,12 @@ import BluetoothIcon from '@material-ui/icons/Bluetooth';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import Divider from '@material-ui/core/Divider';
 
+import '../SettingButton.css';
 
 const styles = theme => ({
   root: {
     width: '100%',
-    maxWidth: 310,
+    maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
     margin:30,
   },
@@ -32,6 +33,7 @@ const SettingForm=(props)=>{
   const { classes } = props;
 
   return(
+    <div className="SettingForm">
     <List
       component="nav"
       subheader={
@@ -69,6 +71,7 @@ const SettingForm=(props)=>{
       </ListItem>
       <Divider />
     </List>
+  </div>
   );
 }
 

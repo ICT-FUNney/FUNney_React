@@ -14,7 +14,7 @@ class Setting extends Component {
 
   render() {
     return (
-      <div className="Setting">
+      <div className="SettingForm">
         <SettingForm/>
         <SettingButton
           clickTask={
