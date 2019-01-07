@@ -14,6 +14,7 @@ class Setting extends Component {
 
   render() {
     return (
+      <div className="SettingBackground">
       <div className="SettingForm">
         <SettingForm/>
         <SettingButton
@@ -23,6 +24,7 @@ class Setting extends Component {
             }
           }/>
       </div>
+    </div>
     );
   }
 }
