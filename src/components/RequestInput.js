@@ -56,7 +56,7 @@ const RequestInput = (props) => {
           id="standard-name"
           helperText ={(props.errorFlagDefaultValue)? "入力されていません":(props.errorFlagDefaultValueNumber) ? "半角数字のみ入力してください" : ""}
           error={props.errorFlagDefaultValueNumber || props.errorFlagDefaultValue}
-          label="送り先学籍番号"
+          label="要求先の学籍番号"
           InputLabelProps={{error: false}}
           className={classes.textField}
           value={props.defaultValue}
