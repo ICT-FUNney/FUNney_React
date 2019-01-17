@@ -1,10 +1,12 @@
 @media screen and (min-width:1025px) {
 .accountInformation {
   margin-top: 3vh;
+  width: 70vw;
 }
 
 .showInformation {
   display: flex;
+  justify-content: center;
 }
 
 .accountIcon {
@@ -18,7 +20,7 @@
 }
 
 .user {
-
+  font-size: 31px;
 }
 
 .space2 {
@@ -33,6 +35,7 @@
 @media screen and (min-width:768px) and ( max-width:1024px){
   .accountInformation {
     margin-top: 3vh;
+    width: 70vw;
   }
 
   .showInformation {
@@ -60,11 +63,16 @@
 
   .property {
   }
+
+  .space3 {
+    height: 10px;
+  }
 }
 
 @media screen and (max-width:767px) {
   .accountInformation {
     margin-top: 3vh;
+    width: 70vw;
   }
 
   .showInformation {
@@ -90,5 +98,6 @@
   }
 
   .property {
+
   }
 }

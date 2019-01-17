@@ -21,27 +21,27 @@ const HomeUserAndProperty=(props)=> {
 
   return (
     <div className="accountInformation">
-      <Paper className={classes.root} elevation={1}>
-        <div className="showInformation">
-          <div className="user">
-            <b>
-              User
-            </b>
-          </div>
-          <div className="space1" />
-          <Typography className="userName" variant="h4" component="h1">
-            <b>
-              {props.userID}       さん
-            </b>
-          </Typography>
-          <div className="space2" />
-          <Typography className="property" variant="h4" component="h1">
-            <b>
-              総資産&nbsp;&nbsp;{props.userProperty}&nbsp;&nbsp;FNY
-            </b>
-          </Typography>
+      <div className="showInformation">
+        <div className="user">
+          <b>
+            User
+          </b>
         </div>
-      </Paper>
+        <div className="space1" />
+        <Typography className="userName" variant="h4" component="h1">
+          <b>
+            {props.userID}       さん
+          </b>
+        </Typography>
+        <div className="space2" />
+        <Typography className="property" variant="h4" component="h1">
+          <b>
+            総資産&nbsp;&nbsp;{props.userProperty}&nbsp;&nbsp;FNY
+          </b>
+        </Typography>
+      </div>
+      <div className="space3" />
+      <hr size="4" color="orange"/>
     </div>
   );
 }
