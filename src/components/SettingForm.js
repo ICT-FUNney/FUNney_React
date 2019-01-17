@@ -53,21 +53,21 @@ const SettingForm=(props)=>{
         <ListItemIcon>
           <BluetoothIcon />
         </ListItemIcon>
-        <ListItemText inset primary="none" />
+        <ListItemText inset primary="システム" />
       </ListItem>
       <Divider />
       <ListItem button>
         <ListItemIcon>
           <MoreHorizIcon />
         </ListItemIcon>
-        <ListItemText inset primary="none" />
+        <ListItemText inset primary="セキュリティ" />
       </ListItem>
       <Divider />
       <ListItem button>
         <ListItemIcon>
           <MoreHorizIcon />
         </ListItemIcon>
-        <ListItemText inset primary="more" />
+        <ListItemText inset primary="プライバシー" />
       </ListItem>
       <Divider />
     </List>
