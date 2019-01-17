@@ -2,7 +2,6 @@
   .SignUpBackground {
     width: 100vw;
     height: 100vh;
-    position: fixed;
     background-image: url('./Image/funney.png');
     background-size: cover;
     background-position: 220px;
