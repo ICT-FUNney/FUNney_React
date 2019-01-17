@@ -33,7 +33,7 @@ class AppSend extends Component {
 		let trimNum=this.state.studentNum.trim();
 		let sendMoneyValue=isMoneyNumber.test(trimMoney);
 		let studentNumValue=isStudentNumber.test(trimNum);
-		if(!studentNumValue||!sendMoneyValue||this.props.data.balance - Number(trimMoney)){
+		if(!studentNumValue||!sendMoneyValue||(this.props.data.balance - Number(trimMoney) < 0)){
 			this.setState({
 				errorMoney: (!sendMoneyValue)? true: false,
 				errorNum: (!studentNumValue)? true: false,
