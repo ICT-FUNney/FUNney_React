@@ -6,10 +6,6 @@ import SettingButton from '../components/SettingButton.js';
 class Setting extends Component {
   constructor(props) {
     super(props);
-}
-
-  changeLink() {
-    this.props.history.push("/");
   }
 
   render() {
@@ -18,11 +14,8 @@ class Setting extends Component {
       <div className="SettingForm">
         <SettingForm/>
         <SettingButton
-          clickTask={
-            e => {
-              this.changeLink(e)
-            }
-          }/>
+          clickTask = {() => {this.props.outLogin()}}
+        />
       </div>
     </div>
     );

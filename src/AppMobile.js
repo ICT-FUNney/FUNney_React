@@ -52,9 +52,8 @@ class AppMobile extends Component {
                   sendMoney = {s => {this.props.sendMoney(s)}} />
                }/>
             <Route exact path="/request" component={Request} />
-            <Route exact path="/setting" component={Setting} />
-            <Route exact path="/signout"
-              render={props => <Signout outLogin = {() => {this.props.outLogin()}}/>
+            <Route exact path="/setting"
+              render={props => <Setting outLogin = {() => {this.props.outLogin()}}/>
             }/>
         </Switch>
       </Switch>
