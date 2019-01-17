@@ -2,11 +2,14 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import '../App.css';
 
 const styles = theme => ({
 
-  textField: {
-    marginLeft: theme.spacing.unit,
+    textField: {
+      marginLeft: theme.spacing.unit,
+      marginRight: theme.spacing.unit,
+      marginBottom: "20%",
     width: "20vw",
     [theme.breakpoints.down('md')]:{
       width : "50vw",
