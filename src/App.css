@@ -4,6 +4,16 @@
 .App_NoSidebar{
 }
 
+.QRL{
+  width: 80%;
+  height: 70vh;
+  margin-top: 15vh;
+  margin-left: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .Home{
   width: 80%;
   height: 70vh;
