@@ -2,13 +2,6 @@
 .SignoutButton{
   visibility:hidden;
 }
-
-.SettingForm{
-  width:40vw;
-  margin-top: 30vh;
-  margin-left: auto;
-  margin-right: auto;
-}
 }
 
 @media screen and (max-width:1024px) {
@@ -22,11 +15,5 @@
 width:100vw;
 position: fixed;
 bottom:10px;
-}
-
-.SettingForm{
-  width:80vw;
-  position: fixed;
-  margin-top: 30px
 }
 }
