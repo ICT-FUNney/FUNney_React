@@ -7,6 +7,7 @@ class AppSend extends Component {
 		sendMoney: '',
 		errorMoney: false,
 		errorNum: false,
+		errorMoney2: false,
 		submitModal: false,
 		errorEmptyNum: false,
 		errorEmptyMoney: false,
@@ -32,12 +33,13 @@ class AppSend extends Component {
 		let trimNum=this.state.studentNum.trim();
 		let sendMoneyValue=isMoneyNumber.test(trimMoney);
 		let studentNumValue=isStudentNumber.test(trimNum);
-		if(!studentNumValue||!sendMoneyValue){
+		if(!studentNumValue||!sendMoneyValue||(this.props.data.balance - Number(trimMoney) < 0)){
 			this.setState({
 				errorMoney: (!sendMoneyValue)? true: false,
 				errorNum: (!studentNumValue)? true: false,
 				errorEmptyMoney: (!trimMoney)? true:false,
 				errorEmptyNum: (!trimNum)? true:false,
+				errorMoney2: (this.props.data.balance - Number(trimMoney) < 0)? true: false,
 			})
 			return
 		}
@@ -63,6 +65,7 @@ class AppSend extends Component {
 		});
 	};
 	render(){
+		console.log(this.state)
 		return (
 			<div className='Send'>
 				<Send
@@ -71,6 +74,7 @@ class AppSend extends Component {
 					errorNum={this.state.errorNum}
 					errorEmptyNum={this.state.errorEmptyNum}
 					errorEmptyMoney={this.state.errorEmptyMoney}
+					errorMoney2={this.state.errorMoney2}
 					submitModal={this.state.submitModal}
 					closeModal={this.closeModal}
 					sendDetermine={this.sendDetermine}

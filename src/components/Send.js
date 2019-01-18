@@ -64,6 +64,7 @@ const Send = (props) =>{
   const { classes } = props;
   const ERR_EMPTY_MESSAGE="入力されていません";
   const ERR_NUMBER_MESSAGE="半角数字のみ入力してください";
+  const ERR_MONENY = "残高が不足しています";
   const IS_TABLET=(window.innerWidth <= 1024);
   return (
     <div className={IS_TABLET?classes.sendForm:null}>
@@ -77,11 +78,11 @@ const Send = (props) =>{
             label="送金金額"
             id="sendMoney"
             name="sendMoney"
-            error={props.errorMoney||props.errorMoneyEmpty}
+            error={props.errorMoney||props.errorMoneyEmpty||props.errorMoney2}
             onChange={e=>{props.handleChange(e)}}
             InputLabelProps={{error: false}}
             value={props.sendMoney}
-            helperText={props.errorEmptyMoney? ERR_EMPTY_MESSAGE : (props.errorMoney? ERR_NUMBER_MESSAGE :"")}
+            helperText={props.errorEmptyMoney? ERR_EMPTY_MESSAGE : (props.errorMoney? ERR_NUMBER_MESSAGE : (props.errorMoney2? ERR_MONENY :""))}
           />
         </div>
         {!(props.errorEmptyMoney||props.errorMoney)?<br/>:null}
@@ -95,7 +96,7 @@ const Send = (props) =>{
             onChange={e=>{props.handleChange(e)}}
             InputLabelProps={{error: false}}
             value={props.studentNum}
-            helperText={props.errorEmptyNum? ERR_EMPTY_MESSAGE : (props.errorNum? ERR_NUMBER_MESSAGE :"")}
+            helperText={props.errorEmptyNum? ERR_EMPTY_MESSAGE : props.errorNum ? ERR_NUMBER_MESSAGE: ""}
           />
         </div>
         {!(props.errorEmptyNum||props.errorNum)?<br/>:null}

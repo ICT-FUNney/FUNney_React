@@ -68,7 +68,8 @@ class AppWeb extends Component {
                 <Route exact path="/send"
                   render={props =>
                     <AppSend
-                      sendMoney = {s => {this.props.sendMoney(s)}} />
+                      sendMoney = {s => {this.props.sendMoney(s)}}
+                      data = {this.props.data} />
                    }/>
                 <Route exact path="/request" component={Request} />
                 <Route exact path="/setting" component={Setting} />
