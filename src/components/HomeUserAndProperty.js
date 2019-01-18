@@ -12,6 +12,7 @@ const styles = theme => ({
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
+    width: "70vw",
   },
 });
 
@@ -20,15 +21,27 @@ const HomeUserAndProperty=(props)=> {
 
   return (
     <div className="accountInformation">
-      <Paper className={classes.root} elevation={1}>
-        <div className="showInformation">
-          <img className="accountIcon" src={AccountIcon} alt="logo" />
-          <div className="space1" />
-          <Typography className="user" variant="h4" component="h1">{props.userID}       さん</Typography>
-          <div className="space2" />
-          <Typography className="property" variant="h4" component="h1"> 総資産額     {props.userProperty}  FUNney</Typography>
+      <div className="showInformation">
+        <div className="user">
+          <b>
+            User
+          </b>
         </div>
-      </Paper>
+        <div className="space1" />
+        <Typography className="userName" variant="h4" component="h1">
+          <b>
+            {props.userID}       さん
+          </b>
+        </Typography>
+        <div className="space2" />
+        <Typography className="property" variant="h4" component="h1">
+          <b>
+            総資産&nbsp;&nbsp;{props.userProperty}&nbsp;&nbsp;FNY
+          </b>
+        </Typography>
+      </div>
+      <div className="space3" />
+      <hr size="4" color="orange"/>
     </div>
   );
 }

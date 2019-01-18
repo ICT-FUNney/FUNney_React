@@ -10,7 +10,7 @@ class Home extends Component {
   constructor(props){
     super(props);
     this.state={
-      user:"Tatsuki Ikai",
+      user:"",
       property:100,
     }
   }
