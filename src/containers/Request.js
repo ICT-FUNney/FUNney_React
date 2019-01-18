@@ -3,6 +3,8 @@ import RequestInput from '../components/RequestInput.js';
 import RequestButton from '../components/RequestButton.js';
 import RequestButtonModal from '../components/RequestButtonModal.js';
 
+import QRL from '../components/QRL.js';
+
 import '../App.css'
 
 class Request extends Component {
@@ -18,6 +20,7 @@ class Request extends Component {
       errorFlagNameNumber: false,
       errorFlagDefaultValueNumber: false,
       requestModal: false,
+      display_QR: false,
     }
   }
 
@@ -55,10 +58,15 @@ clickSendRequest(){
 
     if(this.state.name !== "" && this.state.defaultValue !== "" &&
       this.state.requestSelect !== "noselect" && checkNumber.test(this.state.name)
-    && checkNumber.test(this.state.defaultValue)){
+    && checkNumber.test(this.state.defaultValue) && this.state.requestSelect !== "QR"){
        this.setState({
          requestModal: true,
        })
+      }
+      else if(this.state.requestSelect === "QR"){
+        this.setState({
+          display_QR: true,
+        })
       }
     }
 
@@ -73,6 +81,7 @@ handleChange = (e, name) => {
 
   render() {
     console.log(this.state)
+    if(this.state.display_QR !== true){
     return (
       <div className="Request">
        <div className="RequestBrock">
@@ -105,6 +114,14 @@ handleChange = (e, name) => {
       </div>
       </div>
     );
+  }
+  else{
+    return(
+      <div>
+        <QRL />
+      </div>
+    )
+  }
   }
 }
 

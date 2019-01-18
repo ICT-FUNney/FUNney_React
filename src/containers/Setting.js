@@ -10,8 +10,8 @@ class Setting extends Component {
 
   render() {
     return (
-      <div className="SettingBackground">
-      <div className="SettingForm">
+      <div className="Setting">
+      <div className="Setting__Display">
         <SettingForm/>
         <SettingButton
           clickTask = {() => {this.props.outLogin()}}

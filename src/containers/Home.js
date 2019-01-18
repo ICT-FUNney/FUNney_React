@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/ActionCreators.js';
 
+import AppGridList from '../components/AppGridList.js';
+import AppHomeList from '../components/AppHomeList.js';
+
 //import SendAndRequestButton from '../components/SendAndRequestButton.js';
 import HomeUserAndProperty from '../components/HomeUserAndProperty.js';
 
@@ -23,7 +26,11 @@ class Home extends Component {
           userID={this.props.data.id}
           userProperty={this.props.data.balance}
         />
-      </div>
+        <div className="Home__Display">
+          <AppGridList />
+          <AppHomeList />
+        </div>
+     </div>
     );
   }
 }
