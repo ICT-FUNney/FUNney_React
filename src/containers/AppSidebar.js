@@ -12,9 +12,9 @@ class AppSidebar extends Component {
   makeTarget(link){
     switch (link) {
       case "/home":
-        return "HOME"
+        return "Home"
       case "/send":
-        return "SEND"
+        return "Send"
       case "/request":
         return "Request"
       case "/setting":
@@ -26,7 +26,7 @@ class AppSidebar extends Component {
   }
   changeLink(task){
     switch (task) {
-      case 'SEND':
+      case 'Send':
          this.props.history.push('/send');
          break;
       case 'Request':

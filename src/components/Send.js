@@ -105,10 +105,11 @@ const Send = (props) =>{
           <Button
             variant="contained"
             color="primary"
+            size = "large"
             className={IS_TABLET?classes.submitButtonApp:classes.submitButtonWeb}
             type="submit"
           >
-            send
+            SEND
           </Button>
         </div>
       </form>

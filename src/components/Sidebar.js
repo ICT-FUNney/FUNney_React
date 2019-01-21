@@ -102,7 +102,7 @@ const Sidebar = (props) =>{
       </List>
       <Divider />
         <List className = {classes.SidebarList}>
-          {['HOME', 'SEND','Request', 'Setting', 'Signout'].map((text, index) => {
+          {['Home', 'Send','Request', 'Setting', 'Signout'].map((text, index) => {
               return (
                 <ListItem button = {(text!==props.target) ? true : false} value = {text} key={text}
                  className = {(text!==props.target) ? classes.SidebarListItems: classes.SidebarListItemsTarget}
