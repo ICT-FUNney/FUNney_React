@@ -11,6 +11,7 @@ class AppSend extends Component {
 		submitModal: false,
 		errorEmptyNum: false,
 		errorEmptyMoney: false,
+		Propety: 100,
 	};
 
 	handleChange =e=> {
@@ -69,6 +70,7 @@ class AppSend extends Component {
 		return (
 			<div className='Send'>
 				<Send
+					Propety={this.state.Propety}
 					sendSubmit={(e)=>{this.sendSubmit(e)}}
 					errorMoney={this.state.errorMoney}
 					errorNum={this.state.errorNum}

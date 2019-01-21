@@ -59,6 +59,16 @@ const styles = theme => ({
     left: '50%',
     transform: 'translate(-50%,-50%)',
   },
+  property:{
+    width: 200,
+    fontWeight: 'normal',
+    justifyContent: "center",
+    marginLeft: theme.spacing.unit*2,
+    marginRight: theme.spacing.unit,
+  },
+  Big:{
+    fontSize: '40px',
+  },
 });
 const Send = (props) =>{
   const { classes } = props;
@@ -74,6 +84,9 @@ const Send = (props) =>{
 				onSubmit={e=>{props.sendSubmit(e)}}
       >
         <div>
+        {!(IS_TABLET)?<Typography variant="h6"className={classes.property}>
+            総資産<span className={classes.Big}> {props.Propety}</span> FNY
+          </Typography>:null} 
           <TextField　className={IS_TABLET?classes.textFieldApp:classes.textFieldWeb}
             label="送金金額"
             id="sendMoney"
