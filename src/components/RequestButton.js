@@ -24,6 +24,7 @@ const RequestButton= (props)=>{
      onClick = {e =>{props.clickSendRequest()}
 
      }
+     size = "large"
     >
        request
      </Button>
